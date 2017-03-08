@@ -1,0 +1,5 @@
+[puppet-server]
+puppetmaster.corporate.thoughtworks.com ansible_ssh_host=192.168.57.10 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+
+[puppet-agent]
+puppetagent.corporate.thoughtworks.com ansible_ssh_host=192.168.57.11 ansible_ssh_user=vagrant ansible_ssh_pass=vagrant

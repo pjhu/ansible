@@ -1,0 +1,9 @@
+---
+
+- name: Puppet Server setup
+  hosts: puppet-server
+  roles:
+    #- libselinux-python # TODO check if it is neccessary for prod
+    - puppet-server
+  # TODO become depends on env vars
+  become: true
