@@ -1,5 +1,5 @@
 ---
-- name: install the puppet repo rpm from a remote repo
+- name: install the puppet repo
   yum:
     name: https://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm
     state: present

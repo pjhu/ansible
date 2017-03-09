@@ -1,2 +1,2 @@
 .vagrant
-laybooks/*.retry
+playbooks/*.retry
