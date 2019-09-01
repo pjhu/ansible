@@ -1,0 +1,42 @@
+---
+
+logstash_version: "2.2"
+logstash_defaults: |
+  LS_USER=root
+  LS_HEAP_SIZE="256m"
+
+logstash_inputs: |
+
+  exec {
+    type => "redis_queue"
+    command => "for q in 'mysephora_access' 'crm_access' 'platform_access' 'wcs_access'; do echo $q=$(/opt/redis/bin/redis-cli llen $q); done;"
+    interval => 60
+    tags => ["redis_queue"]
+  }
+
+logstash_filters: |
+  split {
+
+  }
+  ruby {
+    init => '
+      def parse_queue event
+          queue_tuple = event["message"].split("=")
+          event["queue_name"] = queue_tuple[0]
+          event["queue_size"] = queue_tuple[1]
+      end
+    '
+    code => '
+      parse_queue event
+    '
+  }
+  mutate {
+    convert => [ "[queue_size]", "integer"]
+  }
+
+logstash_outputs: |
+  redis {
+    host => ["{{ redis_host }}:{{ redis_port }}"]
+    key => "%{type}"
+    data_type => list
+  }

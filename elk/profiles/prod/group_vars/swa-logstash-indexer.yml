@@ -1,0 +1,21 @@
+---
+
+parsefailure_index: parsefailure
+patterns_dir: /opt/logstash/patterns
+
+logstash_filter_common: |
+  if "_grokparsefailure" in [tags] or "_rubyexception" in [tags] {
+    mutate {
+      add_tag => [ "{{ es_index }}-%{+YYYY.MM.dd}" ]
+    }
+  }
+
+
+logstash_outputs_common: |
+  if "_grokparsefailure" in [tags] or "_rubyexception" in [tags] {
+    elasticsearch {
+      hosts => ["{{ es_cluster | join('", "') }}"]
+      index => "{{ parsefailure_index }}-%{+YYYY.MM.dd}"
+      document_type => "%{type}"
+    }
+  }

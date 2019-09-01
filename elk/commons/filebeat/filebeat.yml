@@ -1,0 +1,34 @@
+filebeat:
+  prospectors:
+    -
+      paths:
+        - d:\MICROS\Res\Pos\Etc\3700d.log
+      document_type: pos_3700d
+      include_lines: ["^Mon","^Tue","^Wed","^Thu","^Fri","^Sat","^Sun"]
+    -
+      paths:
+        - d:\MICROS\Res\Pos\Journals\*
+      document_type: pos_journals
+      multiline:
+        pattern: "^================================"
+        negate: true
+        match: before
+    -
+      paths:
+        - d:\MICROS\Shiji\KunlunMomxxxxCRM\Logs\xxxX.Loyalty.Service.log
+      document_type: pos_msr
+      multiline:
+        pattern: "^[[:digit:]][[:digit:]][[:digit:]][[:digit:]]-[[:digit:]][[:digit:]]-[[:digit:]][[:digit:]]"
+        negate: true
+        match: after
+    -
+      paths:
+        - d:\svcnew\logs\*.log
+      document_type: pos_svc
+      include_lines: ["^[[:digit:]][[:digit:]]:[[:digit:]][[:digit:]]:[[:digit:]][[:digit:]]"]
+      ignore_older: 24h
+output:
+  logstash:
+    hosts: ["logstash.xxx.com.cn:5044"]
+  #console:
+  #  pretty: true

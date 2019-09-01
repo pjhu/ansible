@@ -1,0 +1,8 @@
+---
+
+- name: Ensure docker-compose dir is created
+  file: path={{ docker_compose_dir }} state=directory
+
+- name: Ensure profile vars are replaced in docker-compose file 
+  template: src=docker-compose.yml.j2 dest={{ docker_compose_dir }}/docker-compose.yml 
+

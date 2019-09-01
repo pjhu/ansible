@@ -1,0 +1,12 @@
+---
+
+- name: Kibana with custom configuration
+  hosts: swa-kibana
+  roles:
+    - docker-engine
+    - docker-compose
+    - kibana-docker-compose
+  vars:
+    docker_compose_name: kibana
+    docker_compose_dir: /opt/kibana
+  become: true

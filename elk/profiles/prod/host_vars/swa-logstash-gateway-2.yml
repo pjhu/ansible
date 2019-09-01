@@ -1,0 +1,19 @@
+---
+
+logstash_version: "2.3"
+logstash_defaults: |
+  LS_USER=root
+  LS_HEAP_SIZE="256m"
+
+logstash_inputs: |
+  beats {
+    port => 5044
+  }
+
+logstash_filters:
+
+logstash_outputs: |
+  kafka {
+    topic_id => "%{type}"
+    bootstrap_servers => "KafkaCluster01.xxxxcf.com:9092, KafkaCluster02.xxxxcf.com:9092"
+  }

@@ -1,0 +1,8 @@
+---
+
+- name: curator with custom configuration
+  hosts: swa-curator
+  roles:
+    - repo-epel
+    - curator
+  become: true

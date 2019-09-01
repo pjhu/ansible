@@ -1,0 +1,46 @@
+---
+
+kafka_topic: pos_svc
+es_index: pos_svc
+
+logstash_inputs: |
+  kafka {
+    consumer_id => "svc-01"
+    group_id => "pos"
+    topic_id => "{{ kafka_topic }}"
+    zk_connect => "{{ zookeeper }}"
+  }
+
+logstash_filters: |
+  grok {
+    match => { "message" => "%{TIME:timestamp}%{GREEDYDATA:rawdata}" }
+  }
+  ruby {
+    init => '
+      def get_time event
+        event["timestamp"] = Time.now.strftime("%Y-%m-%d") + " " +event["timestamp"]
+      end
+    '
+    code => '
+      get_time(event)
+    '
+  }
+  date {
+    match => ["timestamp", "yyyy-MM-dd HH:mm:ss"]
+    timezone => "Asia/Shanghai"
+    target => "@timestamp"
+  }
+
+logstash_outputs: |
+  elasticsearch {
+    hosts => ["{{ es_cluster | join('", "') }}"]
+    index => "{{ es_index }}-%{+YYYY.MM.dd}"
+    document_type => "%{type}"
+  }
+
+  elasticsearch {
+    hosts => ["{{ es_cluster | join('", "') }}"]
+    index => "beat_status"
+    document_type => "%{type}"
+    document_id => "%{host}"
+  }

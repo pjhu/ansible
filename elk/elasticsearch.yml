@@ -1,0 +1,10 @@
+---
+- name: Elasticsearch with custom configuration
+  hosts: swa-es
+  roles:
+    #expand to all available parameters
+    - elasticsearch
+    - kopf
+  vars:
+    es_version: 2.0.2
+  become: true

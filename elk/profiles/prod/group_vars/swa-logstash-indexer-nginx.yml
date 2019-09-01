@@ -1,0 +1,30 @@
+---
+
+kafka_topic: platform
+es_index: platform
+
+logstash_inputs: |
+  kafka {
+    consumer_id => "platform-01"
+    group_id => "pos"
+    topic_id => "{{ kafka_topic }}"
+    zk_connect => "{{ zookeeper }}"
+  }
+
+logstash_filters: |
+  grok {
+    patterns_dir => ["/opt/logstash/indexer/patterns"]
+    match => { "message" => "%{NGINX_LOG}" }
+  }
+  date {
+    match => ["timestamp", "dd/MMM/yyyy:HH:mm:ss Z"]
+    timezone => "Asia/Shanghai"
+    target => "@timestamp"
+  }
+
+logstash_outputs: |
+  elasticsearch {
+    hosts => ["{{ es_cluster | join('", "') }}"]
+    index => "{{ es_index }}-%{+YYYY.MM.dd}"
+    document_type => "%{type}"
+  }

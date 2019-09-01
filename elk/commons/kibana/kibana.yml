@@ -1,0 +1,12 @@
+authenticationProvider:
+  name: ldap
+  ldap:
+    url: 'ldap://172.18.1.70:389'
+    bindDn: 'cn=Manager,dc=xxxxcf,dc=com'
+    bindCredentials: 't9ZEGwE2T!'
+    usernameField: 'uid'
+    adminGroup: 'Domain Admins'
+    searchBase: 'dc=xxxxcf,dc=com'
+    searchFilter: '(&(objectClass=person)(uid={{username}}))'
+    import:
+      searchFilter: '(objectClass=person)'

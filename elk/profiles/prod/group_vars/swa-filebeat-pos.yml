@@ -1,0 +1,16 @@
+---
+
+filebeat_config:
+  filebeat:
+    prospectors:
+      -
+        paths:
+          - "/path/to/wcs_access"
+        document_type: wcs_access
+        fields:
+          systemip: "{{ ansible_ssh_host }}"
+
+    registry_file: /.filebeat
+  output:
+    logstash:
+      hosts: ["{{ logstash_getway }}:{{ logstash_getway_port }}"]

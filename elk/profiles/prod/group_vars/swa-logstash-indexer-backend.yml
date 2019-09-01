@@ -1,0 +1,37 @@
+---
+
+kafka_topic: backend
+es_index: backend
+
+logstash_inputs: |
+  kafka {
+    consumer_id => "backend-01"
+    group_id => "backend"
+    topic_id => "{{ kafka_topic }}"
+    zk_connect => "{{ zookeeper }}"
+  }
+
+logstash_filters: |
+  if [fields][type] == "node" {
+    grok {
+      match => { "message" => "%{NODE_TIME:timestamp} %{GREEDYDATA:rawdata}"}
+    }
+  }
+  if [fields][type] == "nsq" {
+    grok {
+      patterns_dir => ["/opt/logstash/indexer/patterns"]
+      match => { "message" => "(?:\[%{GREEDYDATA:key}\] |)%{MSR_NODE_TIME:timestamp} %{GREEDYDATA:rawdata}" }
+    }
+    date {
+      match => ["timestamp",  "yyyy/MMM/dd HH:mm:ss", "yyyy/MMM/d HH:mm:ss"]
+      timezone => "Asia/Shanghai"
+      target => "@timestamp"
+    }
+  }
+
+logstash_outputs: |
+  elasticsearch {
+    hosts => ["{{ es_cluster | join('", "') }}"]
+    index => "{{ es_index }}-%{+YYYY.MM.dd}"
+    document_type => "%{type}"
+  }

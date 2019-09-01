@@ -1,0 +1,64 @@
+---
+
+kafka_topic: sieble
+es_index: sieble
+
+logstash_inputs: |
+  kafka {
+    consumer_id => "sieble-01"
+    group_id => "sieble"
+    topic_id => "{{ kafka_topic }}"
+    zk_connect => "{{ zookeeper }}"
+  }
+
+logstash_filters: |
+  if [type] == "siebel_backend" {
+    grok {
+      match => { "message" => "%{GREEDYDATA}[\t ]%{TIMESTAMP_ISO8601:timestamp}%{GREEDYDATA}" }
+    }
+    date {
+      match => ["timestamp",  "yyyy-MM-dd HH:mm:SS"]
+      timezone => "Asia/Shanghai"
+      target => "@timestamp"
+    }
+  }
+
+  if [fields][type] == "apache" {
+    grok {
+      match => { "message" => "%{IPORHOST:clientip} %{USER:ident} %{USER:auth} \[%{HTTPDATE:timestamp}\] %{NUMBER:response_time} \"(?:%{WORD:verb} %{NOTSPACE:request}(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})\" %{NUMBER:response} (?:%{NUMBER:bytes}|-)" }
+    }
+    date {
+      match => ["timestamp",  "dd/MMM/yyyy:HH:mm:ss Z", "d/MMM/yyyy:HH:mm:ss Z"]
+      timezone => "Asia/Shanghai"
+      target => "@timestamp"
+    }
+  }
+  if "apache_" in [fields][type] {
+    grok {
+      match => { "message" => "\[%{TIMESTAMP_ISO8601:timestamp}\]%{GREEDYDATA:raw_data}" }
+    }
+    date {
+      match => ["timestamp",  "ISO8601"]
+      timezone => "Asia/Shanghai"
+      target => "@timestamp"
+    }
+  }
+
+  if [type] == "siebel_alert" {
+    grok {
+      patterns_dir => ["/Users/twer/work/elk/docker_run/patterns"]
+      match => { "message" => "%{BUCKS_DATE:timestamp}%{GREEDYDATA}" }
+    }
+    date {
+      match => ["timestamp",  "EEE MMM dd HH:mm:ss yyyy", "EEE MMM d HH:mm:ss yyyy"]
+      timezone => "Asia/Shanghai"
+      target => "@timestamp"
+    }
+  }
+
+logstash_outputs: |
+  elasticsearch {
+    hosts => ["{{ es_cluster | join('", "') }}"]
+    index => "%{type}-%{+YYYY.MM.dd}"
+    document_type => "%{type}"
+  }

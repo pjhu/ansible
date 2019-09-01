@@ -1,0 +1,8 @@
+---
+
+docker_compose_dir: /opt/logstash/indexer/backend/1
+app_configs:
+  - { dir: /opt/logstash/indexer/backend/1, name: indexer.conf }
+  - { dir: /opt/logstash/indexer/patterns, name: common-pattern }
+
+container_name: indexer-pos-backend-1

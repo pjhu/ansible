@@ -1,0 +1,32 @@
+---
+
+kafka_topic: backend-msr
+es_index: backend-msr
+
+logstash_inputs: |
+  kafka {
+    consumer_id => "msr-01"
+    group_id => "backend"
+    topic_id => "{{ kafka_topic }}"
+    zk_connect => "{{ zookeeper }}"
+  }
+
+logstash_filters: |
+  grok {
+    match => {
+      patterns_dir => ["/opt/logstash/indexer/patterns"]
+      "message" => "%{MSR_NODE_TIME:timestamp} %{GREEDYDATA:rawrequest}"
+    }
+  }
+  date {
+    match => [ "timestamp" , "yyyy-MMM-dd HH:mm:ss","yyy-MMM-dd HH:mm:ss" ]
+    timezone => "Asia/Shanghai"
+    target => "@timestamp"
+  }
+
+logstash_outputs: |
+  elasticsearch {
+    hosts => ["{{ es_cluster | join('", "') }}"]
+    index => "{{ es_index }}-%{+YYYY.MM.dd}"
+    document_type => "%{type}"
+  }

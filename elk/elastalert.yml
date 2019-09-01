@@ -1,0 +1,12 @@
+---
+
+- name: Elastalert with custom configuration
+  hosts: swa-elastalert
+  roles:
+    - docker-engine
+    - docker-compose
+    - elastalert-docker-compose
+  vars:
+    docker_compose_name: elastalert
+    docker_compose_dir: /opt/elastalert
+  become: true

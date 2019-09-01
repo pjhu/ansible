@@ -1,0 +1,8 @@
+---
+
+- name: filebeat with custom configuration
+  hosts: swa-filebeat-platform
+  roles:
+    - libselinux-python
+    - filebeat
+  become: true

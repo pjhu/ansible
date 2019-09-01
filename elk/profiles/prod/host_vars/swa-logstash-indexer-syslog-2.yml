@@ -1,0 +1,15 @@
+---
+
+docker_compose_dir: /opt/logstash/indexer/syslog/2
+app_configs:
+  - { dir: /opt/logstash/indexer/syslog/2, name: indexer.conf }
+
+container_name: indexer-pos-syslog-2
+
+logstash_inputs: |
+  kafka {
+    consumer_id => "syslog-02"
+    group_id => "syslog"
+    topic_id => "{{ kafka_topic }}"
+    zk_connect => "{{ zookeeper }}"
+  }

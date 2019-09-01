@@ -1,0 +1,12 @@
+---
+
+- name: Nginx with custom configuration
+  hosts: swa-nginx
+  roles:
+    - docker-engine
+    - docker-compose
+    - nginx-docker-compose
+  vars:
+    docker_compose_name: nginx
+    docker_compose_dir: /opt/nginx
+  become: true

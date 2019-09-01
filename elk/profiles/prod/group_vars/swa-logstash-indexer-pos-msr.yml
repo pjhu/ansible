@@ -1,0 +1,36 @@
+---
+
+kafka_topic: pos_msr
+es_index: pos_msr
+
+logstash_inputs: |
+  kafka {
+    consumer_id => "msr-01"
+    group_id => "pos"
+    topic_id => "{{ kafka_topic }}"
+    zk_connect => "{{ zookeeper }}"
+  }
+
+logstash_filters: |
+  grok {
+    match => { "message" => "%{TIMESTAMP_ISO8601:timestamp} %{GREEDYDATA:rawdata}" }
+  }
+  date {
+    match => ["timestamp", "ISO8601", "yyyy-MM-dd HH:mm:ss.SSSS"]
+    timezone => "Asia/Shanghai"
+    target => "@timestamp"
+  }
+
+logstash_outputs: |
+  elasticsearch {
+    hosts => ["{{ es_cluster | join('", "') }}"]
+    index => "{{ es_index }}-%{+YYYY.MM.dd}"
+    document_type => "%{type}"
+  }
+
+  elasticsearch {
+    hosts => ["{{ es_cluster | join('", "') }}"]
+    index => "beat_status"
+    document_type => "%{type}"
+    document_id => "%{host}"
+  }

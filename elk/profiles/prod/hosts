@@ -1,0 +1,138 @@
+[swa-es-1]
+swa-es-1 ansible_ssh_host=ElasticSearch01.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-es-1:vars]
+es_instance_name=swa-es-1
+
+[swa-es-2]
+swa-es-2 ansible_ssh_host=ElasticSearch02.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-es-2:vars]
+es_instance_name=swa-es-2
+
+[swa-es-3]
+swa-es-3 ansible_ssh_host=ElasticSearch03.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-es-3:vars]
+es_instance_name=swa-es-3
+
+[swa-es:children]
+swa-es-1
+swa-es-2
+swa-es-3
+
+[swa-es:vars]
+es_data_dir=/data/elasticsearch/data
+es_log_dir=/data/elasticsearch/logs
+es_work_dir=/data/elasticsearch/temp
+
+[swa-logstash-gateway-1]
+swa-logstash-gateway-1 ansible_ssh_host=logstash-front01.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-logstash-gateway-2]
+swa-logstash-gateway-2 ansible_ssh_host=logstash-front02.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-logstash-gateway:children]
+swa-logstash-gateway-1
+swa-logstash-gateway-2
+
+[swa-jdk:children]
+swa-logstash-gateway
+
+[swa-jdk:vars]
+java_packages=java-1.8.0-openjdk.x86_64
+
+[swa-logstash-indexer-pos-3700d-1]
+swa-logstash-indexer-pos-3700d-1 ansible_ssh_host=logstash-docker1.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-logstash-indexer-pos-journals-1]
+swa-logstash-indexer-pos-journals-1 ansible_ssh_host=logstash-docker1.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-logstash-indexer-pos-svc-1]
+swa-logstash-indexer-pos-svc-1 ansible_ssh_host=logstash-docker1.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-logstash-indexer-pos-msr-1]
+swa-logstash-indexer-pos-msr-1 ansible_ssh_host=logstash-docker1.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-logstash-indexer-backend-1]
+swa-logstash-indexer-backend-1 ansible_ssh_host=logstash-docker1.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-logstash-indexer-backend-gateway-1]
+swa-logstash-indexer-backend-gateway-1 ansible_ssh_host=logstash-docker3.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-logstash-indexer-backend-msr-1]
+swa-logstash-indexer-backend-msr-1 ansible_ssh_host=logstash-docker3.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-logstash-indexer-syslog-1]
+swa-logstash-indexer-syslog-1 ansible_ssh_host=logstash-docker2.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-logstash-indexer-syslog-2]
+swa-logstash-indexer-syslog-2 ansible_ssh_host=logstash-docker2.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-logstash-indexer-siebel-1]
+swa-logstash-indexer-siebel-1 ansible_ssh_host=logstash-docker2.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-logstash-indexer-pos-3700d:children]
+swa-logstash-indexer-pos-3700d-1
+
+[swa-logstash-indexer-pos-journals:children]
+swa-logstash-indexer-pos-journals-1
+
+[swa-logstash-indexer-pos-svc:children]
+swa-logstash-indexer-pos-svc-1
+
+[swa-logstash-indexer-pos-msr:children]
+swa-logstash-indexer-pos-msr-1
+
+[swa-logstash-indexer-backend:children]
+swa-logstash-indexer-backend-1
+
+[swa-logstash-indexer-backend-gateway]
+swa-logstash-indexer-backend-gateway-1
+
+[swa-logstash-indexer-backend-msr]
+swa-logstash-indexer-backend-msr-1
+
+[swa-logstash-indexer-syslog:children]
+swa-logstash-indexer-syslog-1
+swa-logstash-indexer-syslog-2
+
+[swa-logstash-indexer-siebel:children]
+swa-logstash-indexer-siebel-1
+
+[swa-logstash-indexer:children]
+swa-logstash-indexer-pos-3700d
+swa-logstash-indexer-pos-journals
+swa-logstash-indexer-pos-svc
+swa-logstash-indexer-pos-msr
+swa-logstash-indexer-backend
+swa-logstash-indexer-backend-gateway
+swa-logstash-indexer-backend-msr
+swa-logstash-indexer-syslog
+swa-logstash-indexer-siebel
+
+[swa-kibana-1]
+swa-kibana-1 ansible_ssh_host=KibanaDockers.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-kibana:children]
+swa-kibana-1
+
+[swa-nginx-1]
+swa-nginx-1 ansible_ssh_host=KibanaDockers.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-nginx:children]
+swa-nginx-1
+
+[swa-curator-1]
+swa-curator-1 ansible_ssh_host=ElasticSearch01.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-curator-2]
+swa-curator-2 ansible_ssh_host=ElasticSearch02.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-curator-3]
+swa-curator-3 ansible_ssh_host=ElasticSearch03.xxxxcf.com ansible_ssh_user=stadmin
+
+[swa-curator:children]
+swa-curator-1
+swa-curator-2
+swa-curator-3

@@ -1,0 +1,11 @@
+---
+
+- name: cAdvisor with custom configuration
+  hosts: docker-hosts
+  roles:
+    - docker-engine
+    - docker-compose
+    - cadvisor-docker-compose
+  vars:
+    docker_compose_dir: cadvisor
+  become: true

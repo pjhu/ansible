@@ -1,0 +1,7 @@
+---
+
+app_configs:
+  - { dir: /opt/elastalert/rules, name: elastalert_rule_grokparsefailure.yaml }
+  - { dir: /opt/elastalert/conf, name: elastalert_config.yaml }
+  - { dir: /opt/elastalert/conf, name: elastalert_supervisord.conf }
+  - { dir: /opt/elastalert/conf, name: smtp_auth_file.yaml }

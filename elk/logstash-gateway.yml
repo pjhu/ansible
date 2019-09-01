@@ -1,0 +1,9 @@
+---
+
+- name: logstash with custom configuration
+  hosts: swa-logstash-gateway
+  roles:
+    - java
+    - libselinux-python
+    - logstash
+  become: true

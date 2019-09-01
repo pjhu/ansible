@@ -1,0 +1,13 @@
+---
+
+- name: Redis with custom configuration
+  hosts: swa-redis
+  vars:
+    - redis_bind: 0.0.0.0
+    - redis_port: 6379
+  roles:
+    - java
+    - libselinux-python
+    - redis
+    - logstash
+  become: true

@@ -1,0 +1,41 @@
+---
+
+kafka_topic: backend-gateway
+es_index: backend-gateway
+
+logstash_inputs: |
+  kafka {
+    consumer_id => "gateway-01"
+    group_id => "backend"
+    topic_id => "{{ kafka_topic }}"
+    zk_connect => "{{ zookeeper }}"
+  }
+
+logstash_filters: |
+  if [fields][type] == "access" {
+    grok {
+      match => { "message" => "%{IPORHOST:clientip} %{USER:ident} %{USER:auth} \[%{HTTPDATE:timestamp}\] \"%{GREEDYDATA:rawrequest}\""}
+    }
+    date {
+      match => ["timestamp",  "dd/MMM/yyyy:HH:mm:ss Z", "d/MMM/yyyy:HH:mm:ss Z"]
+      timezone => "Asia/Shanghai"
+      target => "@timestamp"
+    }
+  }
+  if [fields][type] == "error" {
+    grok {
+      match => { "message" => "%{MSR_NODE_TIME:timestamp} %{GREEDYDATA:rawrequest}" }
+    }
+    date {
+      match => ["timestamp",  "yyyy/MMM/dd HH:mm:ss", "yyyy/MMM/d HH:mm:ss"]
+      timezone => "Asia/Shanghai"
+      target => "@timestamp"
+    }
+  }
+
+logstash_outputs: |
+  elasticsearch {
+    hosts => ["{{ es_cluster | join('", "') }}"]
+    index => "{{ es_index }}-%{+YYYY.MM.dd}"
+    document_type => "%{type}"
+  }

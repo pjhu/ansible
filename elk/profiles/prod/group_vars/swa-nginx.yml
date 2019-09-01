@@ -1,0 +1,8 @@
+---
+
+app_configs:
+  - { dir: /opt/nginx/conf, name: nginx.conf }
+  - { dir: /opt/nginx/conf, name: mime.types }
+  - { dir: /opt/nginx/conf/conf.d, name: default.conf }
+
+container_name: nginx-1

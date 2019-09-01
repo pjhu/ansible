@@ -1,0 +1,75 @@
+filebeat:
+  prospectors:
+    -
+      paths:
+        - "/data/oracle/app/siebel/siebsrvr/enterprises/SBA_81/Siebsrvr*/log/*.log"
+      document_type: siebel_backend
+      fields:
+        type: srvr
+      multiline:
+        pattern: '[[:digit:]][[:digit:]][[:digit:]][[:digit:]]-[[:digit:]][[:digit:]]-[[:digit:]][[:digit:]]'
+        negate: true
+        match: after
+      ignore_older: 24h
+    -
+      paths:
+        - "/data/oracle/app/siebel/gtwysrvr/log/NameSrvr.log"
+      document_type: siebel_backend
+      fields:
+        type: gtwy
+      multiline:
+        pattern: '[[:digit:]][[:digit:]][[:digit:]][[:digit:]]-[[:digit:]][[:digit:]]-[[:digit:]][[:digit:]]'
+        negate: true
+        match: after
+      ignore_older: 24h
+    -
+      paths:
+        - "/data/oracle/app/eappweb/log/*.log"
+      document_type: siebel_backend
+      fields:
+        type: swse
+      multiline:
+        pattern: '[[:digit:]][[:digit:]][[:digit:]][[:digit:]]-[[:digit:]][[:digit:]]-[[:digit:]][[:digit:]]'
+        negate: true
+        match: after
+      ignore_older: 24h
+    -
+      paths:
+        - "/data/oracle/app/webtier/Oracle_WT1/instances/siebel/diagnostics/logs/OHS/siebel/acess_log"
+      document_type: siebel_frontend
+      fields:
+        type: apache
+      ignore_older: 24h
+    -
+      paths:
+        - "/data/oracle/app/webtier/Oracle_WT1/instances/siebel/diagnostics/logs/OHS/siebel/siebel.log"
+      document_type: siebel_frontend
+      fields:
+          type: apache_siebel
+      include_lines: ['^\[']
+      ignore_older: 24h
+    -
+      paths:
+        - "/data/oracle/app/webtier/Oracle_WT1/instances/swse/diagnostics/logs/OHS/swse/swse.log"
+      document_type: siebel_frontend
+      fields:
+        type: apache_swse
+      include_lines: ['^\[']
+      ignore_older: 24h
+    -
+      paths:
+        - "/oracle/app/database/diag/rdbms/siebuat/siebuat/trace/alert_siebuat.log"
+      document_type: siebel_alert
+      fields:
+        type: db
+      multiline:
+        pattern: '"^Mon"|"^Tue"|"^Wed"|"^Thu"|"^Fri"|"^Sat"|"^Sun"'
+        negate: true
+        match: after
+      ignore_older: 24h
+  registry_file: /.filebeat
+output:
+  logstash:
+    hosts: ["logstash.xxx.com.cn:5044"]
+  #console:
+  #  pretty: true

@@ -1,0 +1,6 @@
+---
+
+app_configs:
+  - { dir: /opt/kibana, name: kibana.yml }
+
+container_name: kibana-1

@@ -1,0 +1,8 @@
+---
+
+docker_compose_dir: /opt/logstash/indexer/nginx
+app_configs:
+  - { dir: /opt/logstash/indexer/nginx, name: indexer.conf }
+  - { dir: /opt/logstash/indexer/patterns, name: common-pattern }
+
+container_name: indexer-nginx-1

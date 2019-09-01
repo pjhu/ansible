@@ -1,0 +1,7 @@
+---
+
+- name: Ensure docker container is stop
+  shell: docker-compose -f {{ docker_compose_dir }}/docker-compose.yml stop
+
+- name: Ensure docker-compose is up
+  shell: docker-compose -f {{ docker_compose_dir }}/docker-compose.yml up -d

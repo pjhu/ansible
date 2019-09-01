@@ -1,0 +1,44 @@
+---
+
+kafka_topic: pos_journals
+es_index: pos_journals
+
+logstash_inputs: |
+  kafka {
+    consumer_id => "journals-01"
+    group_id => "pos"
+    topic_id => "{{ kafka_topic }}"
+    zk_connect => "{{ zookeeper }}"
+  }
+
+logstash_filters: |
+  ruby {
+    init => '
+      def get_time line
+        return line.split("    ")[-1].strip().gsub("\'", " ")
+      end
+    '
+    code => '
+      lines = event["message"].split("\n")
+      event["timestamp"] = get_time(lines[3])
+    '
+  }
+  date {
+    match => ["timestamp", "ddMMM yy HH:mm"]
+    timezone => "Asia/Shanghai"
+    target => "@timestamp"
+  }
+
+logstash_outputs: |
+  elasticsearch {
+    hosts => ["{{ es_cluster | join('", "') }}"]
+    index => "{{ es_index }}-%{+YYYY.MM.dd}"
+    document_type => "%{type}"
+  }
+
+  elasticsearch {
+    hosts => ["{{ es_cluster | join('", "') }}"]
+    index => "beat_status"
+    document_type => "%{type}"
+    document_id => "%{host}"
+  }

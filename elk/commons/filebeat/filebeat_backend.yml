@@ -1,0 +1,42 @@
+filebeat:
+  prospectors:
+    -
+      paths:
+        - /var/log/nginx/access.log
+      fields:
+        type: access
+      ignore_older: 24h
+      document_type: backend-gateway
+    -
+      paths:
+        - /var/log/nginx/error.log
+      fields:
+        type: error
+      ignore_older: 24h
+      document_type: backend-gateway
+    -
+      paths:
+        - /var/log/msr/msr-api.log
+      fields:
+        type: msr
+      ignore_older: 24h
+      document_type: backend-msr
+    -
+      paths:
+        - /var/log/node.log
+      fields:
+        type: node
+      ignore_older: 24h
+      document_type: backend
+    -
+      paths:
+        - /var/log/nsq*.log
+      fields:
+        type: nsq
+      ignore_older: 24h
+      document_type: backend
+  registry_file: /var/lib/filebeat/registry
+output:
+  logstash:
+    hosts: ["172.18.1.116:5044"]
+    worker: 5

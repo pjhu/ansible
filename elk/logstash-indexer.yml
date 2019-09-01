@@ -1,0 +1,12 @@
+---
+
+- name: Logstash Indexer with custom configuration
+  hosts: swa-logstash-indexer
+  roles:
+    - repo-epel
+    - docker-engine
+    - docker-compose
+    - logstash-docker-compose
+  vars:
+    docker_compose_name: logstash
+  become: true

@@ -1,0 +1,51 @@
+---
+
+kafka_topic: pos_3700d
+es_index: pos_3700d
+
+logstash_inputs: |
+  kafka {
+    consumer_id => "3700d-01"
+    group_id => "pos"
+    topic_id => "{{ kafka_topic }}"
+    zk_connect => "{{ zookeeper }}"
+  }
+
+logstash_filters: |
+  grok {
+    patterns_dir => ["/opt/logstash/indexer/patterns"]
+    match => { "message" => "%{BUCKS_DATE:timestamp} \| %{GREEDYDATA:Machine}\| %{GREEDYDATA:Process}\|%{GREEDYDATA:Handle}\|%{GREEDYDATA:String}\|%{GREEDYDATA:Binary_Data}" }
+  }
+  ruby {
+    init => '
+      def strip_space event
+        event["Machine"] = event["Machine"].strip()
+        event["Process"] = event["Process"].strip()
+        event["Handle"] = event["Handle"].strip()
+        event["String"] = event["String"].strip()
+        event["Binary_Data"] = event["Binary_Data"].strip()
+      end
+    '
+    code => '
+      strip_space(event)
+    '
+  }
+  date {
+    match => ["timestamp", "EEE MMM dd HH:mm:ss yyyy"]
+    timezone => "Asia/Shanghai"
+    target => "@timestamp"
+  }
+
+logstash_outputs: |
+  elasticsearch {
+    hosts => ["{{ es_cluster | join('", "') }}"]
+    index => "{{ es_index }}-%{+YYYY.MM.dd}"
+    document_type => "%{type}"
+  }
+
+  elasticsearch {
+    hosts => ["{{ es_cluster | join('", "') }}"]
+    index => "beat_status"
+    document_type => "%{type}"
+    document_id => "%{host}"
+  }
