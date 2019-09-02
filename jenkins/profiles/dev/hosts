@@ -1,0 +1,13 @@
+[jenkins-mater]
+jenkins-mater ansible_ssh_host=192.168.45.40 ansible_ssh_user=vagrant
+
+[jenkins-slave-1]
+jenkins-slave-1 ansible_ssh_host=192.168.45.41 ansible_ssh_user=vagrant
+
+[jenkins-slave-2]
+jenkins-slave-2 ansible_ssh_host=192.168.45.42 ansible_ssh_user=vagrant
+
+[jenkins:children]
+jenkins-mater
+jenkins-slave-1
+jenkins-slave-2

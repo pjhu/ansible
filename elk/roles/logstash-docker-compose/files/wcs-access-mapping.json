@@ -1,0 +1,72 @@
+{
+    "template" : "wcs_access*",
+    "mappings" : {
+      "wcs_access" : {
+        "properties" : {
+          "clientip" : {
+            "index" : "not_analyzed",
+            "type" : "string"
+          },
+          "directaccessip" : {
+            "index" : "not_analyzed",
+            "type" : "string"
+          },
+          "request_path" : {
+            "index" : "not_analyzed",
+            "type" : "string"
+          },
+          "request_uri" : {
+            "index" : "not_analyzed",
+            "type" : "string"
+          },
+          "request_uri_path" : {
+            "index" : "not_analyzed",
+            "type" : "string"
+          },
+          "response_time" : {
+            "index" : "not_analyzed",
+            "type" : "long"
+          },
+          "referrer" : {
+            "index" : "not_analyzed",
+            "type" : "string"
+          },
+          "source" : {
+            "index" : "not_analyzed",
+            "type" : "string"
+          },
+          "agent" : {
+            "index" : "not_analyzed",
+            "type" : "string"
+          },
+          "fields" : {
+            "properties" : {
+              "systemip" : {
+                "index" : "not_analyzed",
+                "type" : "string"
+              }
+            }
+          },
+          "beat" : {
+            "properties" : {
+              "hostname" : {
+                "index" : "not_analyzed",
+                "type" : "string"
+              },
+              "name" : {
+                "index" : "not_analyzed",
+                "type" : "string"
+              }
+            }
+          },
+          "geoip" : {
+            "properties" : {
+              "coordinates" : {
+                "type" : "geo_point"
+              }
+            }
+          }
+        }
+      }
+    }
+}

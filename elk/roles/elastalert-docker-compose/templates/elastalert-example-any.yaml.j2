@@ -1,0 +1,24 @@
+name: process_down
+type: any
+index: collectd*
+
+timeframe:
+  minutes: 1
+filter:
+  - term:
+      processes: 0
+
+alert:
+- "email"
+- "slack"
+
+email:
+- "jhpeng@thoughtworks.com"
+- "ygzhou@thoughtworks.com"
+smtp_host: "smtp.163.com"
+smtp_port: 25
+from_addr: "sephora26@163.com"
+smtp_auth_file: "/opt/config/smtp_auth_file.yaml"
+
+slack:
+slack_webhook_url: "https://hooks.slack.com/services/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"

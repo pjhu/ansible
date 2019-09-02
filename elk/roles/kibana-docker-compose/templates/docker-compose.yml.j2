@@ -1,0 +1,8 @@
+kibana:
+  image: kibana:tw
+  restart: always
+  container_name: {{ container_name }}
+  volumes:
+    - /opt/kibana/kibana.yml:/opt/kibana/config/kibana.yml
+  ports:
+    - "{{ kibana_port }}:5601"

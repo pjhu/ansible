@@ -1,0 +1,4 @@
+---
+
+- name: Create our remote directory for store nginx access log
+  file: path=/data/nginx_log state=directory

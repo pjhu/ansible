@@ -1,0 +1,7 @@
+---
+
+- name: docker engine with custom configuration
+  hosts: jenkins
+  roles:
+    - docker
+  become: true

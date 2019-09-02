@@ -1,0 +1,9 @@
+nginx:
+  image: nginx:latest
+  restart: always
+  container_name: {{ container_name }}
+  volumes:
+    - /opt/nginx/conf:/etc/nginx/:ro
+    - /data/nginx_log:/var/log/nginx
+  ports:
+    - "80:80"

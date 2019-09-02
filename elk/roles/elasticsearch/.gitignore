@@ -1,0 +1,9 @@
+.kitchen/
+.kitchen.local.yml
+*.lock
+.vendor
+.bundle
+Converging
+TODO
+.idea/
+elasticsearch.iml

@@ -1,0 +1,13 @@
+---
+
+- name: include nginx log path
+  include: access-log.yml
+  
+- name: include docker-compose file
+  include: commons/docker-compose-deploy/docker-compose-file.yml
+
+- name: include app conf file
+  include: commons/docker-compose-deploy/app-config.yml
+
+- name: include docker-compose up
+  include: commons/docker-compose-deploy/docker-compose-up.yml

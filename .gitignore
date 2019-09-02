@@ -1,3 +1,2 @@
 .vagrant
 playbooks/*.retry
-roles

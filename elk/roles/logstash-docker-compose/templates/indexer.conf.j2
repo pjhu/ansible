@@ -1,0 +1,19 @@
+input {
+
+{{ logstash_inputs }}
+
+}
+
+filter {
+
+{{ logstash_filters }}
+{{ logstash_filter_common }}
+
+}
+
+output {
+
+{{ logstash_outputs }}
+{{ logstash_outputs_common }}
+
+}

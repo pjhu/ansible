@@ -1,0 +1,11 @@
+elastalert:
+  image: ivankrizsan/elastalert
+  net: "host"
+  environment:
+    - SET_CONTAINER_TIMEZONE=true
+    - CONTAINER_TIMEZONE=Asia/Shanghai
+    - ELASTICSEARCH_HOST={{ es_host }}
+  volumes:
+    - /opt/elastalert/rules:/opt/rules
+    - /opt/elastalert/conf:/opt/config
+    - /opt/elastalert/conf/elastalert_config.yaml:/opt/elastalert/config.yaml
