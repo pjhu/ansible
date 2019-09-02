@@ -1,0 +1,2225 @@
+ansible-playbook 2.7.5
+  config file = None
+  configured module search path = ['/Users/twcn/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.7.2 (default, Dec 27 2018, 07:35:52) [Clang 10.0.0 (clang-1000.11.45.5)]
+No config file found; using defaults
+setting up inventory plugins
+/Users/twcn/work/pjhu/ansible/jenkins/profiles/dev/hosts did not meet host_list requirements, check plugin documentation if this is unexpected
+/Users/twcn/work/pjhu/ansible/jenkins/profiles/dev/hosts did not meet script requirements, check plugin documentation if this is unexpected
+Parsed /Users/twcn/work/pjhu/ansible/jenkins/profiles/dev/hosts inventory source with ini plugin
+statically imported: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/docker-1809-shim.yml
+Loading callback plugin default of type stdout, v2.0 from /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/plugins/callback/default.py
+
+PLAYBOOK: docker-playbook.yml ****************************************************************************************************************************************************************************************************************
+1 plays in ./docker-playbook.yml
+
+PLAY [docker engine with custom configuration] ***********************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] ***********************************************************************************************************************************************************************************************************************
+task path: /Users/twcn/work/pjhu/ansible/jenkins/docker-playbook.yml:3
+<192.168.45.41> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.41
+<192.168.45.42> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.42
+<192.168.45.40> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.40
+<192.168.45.41> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.9042518-259968229488440 `" && echo ansible-tmp-1567408048.9042518-259968229488440="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.9042518-259968229488440 `" ) && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.9042401-237614887843784 `" && echo ansible-tmp-1567408048.9042401-237614887843784="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.9042401-237614887843784 `" ) && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.904253-252043752429120 `" && echo ansible-tmp-1567408048.904253-252043752429120="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.904253-252043752429120 `" ) && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/system/setup.py
+<192.168.45.41> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmptiojqjfz TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.9042518-259968229488440/AnsiballZ_setup.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/system/setup.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/system/setup.py
+<192.168.45.42> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpfdfh0a0k TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.904253-252043752429120/AnsiballZ_setup.py
+<192.168.45.40> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpwjs2u4ef TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.9042401-237614887843784/AnsiballZ_setup.py
+<192.168.45.41> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.9042518-259968229488440/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.9042518-259968229488440/AnsiballZ_setup.py && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.904253-252043752429120/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.904253-252043752429120/AnsiballZ_setup.py && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.9042401-237614887843784/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.9042401-237614887843784/AnsiballZ_setup.py && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-kltcqnrdqqasooabmdhubtovftmyylus; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.9042518-259968229488440/AnsiballZ_setup.py'"'"' && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-majziiyiijiqzuqfysjupqnixoyrdowf; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.904253-252043752429120/AnsiballZ_setup.py'"'"' && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-uunfuhqnyjbbdnapsqnwngevnfsrzrce; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.9042401-237614887843784/AnsiballZ_setup.py'"'"' && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.9042518-259968229488440/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.904253-252043752429120/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408048.9042401-237614887843784/ > /dev/null 2>&1 && sleep 0'
+ok: [jenkins-slave-1]
+ok: [jenkins-slave-2]
+ok: [jenkins-mater]
+META: ran handlers
+
+TASK [docker : include_tasks] ****************************************************************************************************************************************************************************************************************
+task path: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/main.yml:2
+included: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/setup-RedHat.yml for jenkins-slave-2, jenkins-slave-1, jenkins-mater
+
+TASK [docker : Ensure old versions of Docker are not installed.] *****************************************************************************************************************************************************************************
+task path: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/setup-RedHat.yml:2
+Running yum
+<192.168.45.42> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.42
+Running yum
+<192.168.45.41> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.41
+Running yum
+<192.168.45.40> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.40
+<192.168.45.42> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.53494-180427108296476 `" && echo ansible-tmp-1567408050.53494-180427108296476="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.53494-180427108296476 `" ) && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.555978-178547057706382 `" && echo ansible-tmp-1567408050.555978-178547057706382="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.555978-178547057706382 `" ) && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.5766442-42925059908791 `" && echo ansible-tmp-1567408050.5766442-42925059908791="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.5766442-42925059908791 `" ) && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/packaging/os/yum.py
+<192.168.45.42> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmph1mv8y4y TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.53494-180427108296476/AnsiballZ_yum.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/packaging/os/yum.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/packaging/os/yum.py
+<192.168.45.40> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmp68fuqlei TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.5766442-42925059908791/AnsiballZ_yum.py
+<192.168.45.41> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpqzefjdj2 TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.555978-178547057706382/AnsiballZ_yum.py
+<192.168.45.42> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.53494-180427108296476/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.53494-180427108296476/AnsiballZ_yum.py && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.5766442-42925059908791/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.5766442-42925059908791/AnsiballZ_yum.py && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.555978-178547057706382/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.555978-178547057706382/AnsiballZ_yum.py && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-lbckpwdsbfhoyrhqccitedoynnprmgxh; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.53494-180427108296476/AnsiballZ_yum.py'"'"' && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-cqsjekihciqqfnohkgffxhyrqvyjicpy; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.555978-178547057706382/AnsiballZ_yum.py'"'"' && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-kogtnnznmdeihyrfspqbstuakeozjeyp; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.5766442-42925059908791/AnsiballZ_yum.py'"'"' && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.53494-180427108296476/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.555978-178547057706382/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408050.5766442-42925059908791/ > /dev/null 2>&1 && sleep 0'
+ok: [jenkins-slave-2] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "autoremove": false,
+            "bugfix": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "installroot": "/",
+            "list": null,
+            "name": [
+                "docker",
+                "docker-common",
+                "docker-engine"
+            ],
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "state": "absent",
+            "update_cache": false,
+            "update_only": false,
+            "use_backend": "auto",
+            "validate_certs": true
+        }
+    },
+    "msg": "",
+    "rc": 0,
+    "results": [
+        "docker is not installed",
+        "docker-common is not installed",
+        "docker-engine is not installed"
+    ]
+}
+ok: [jenkins-slave-1] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "autoremove": false,
+            "bugfix": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "installroot": "/",
+            "list": null,
+            "name": [
+                "docker",
+                "docker-common",
+                "docker-engine"
+            ],
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "state": "absent",
+            "update_cache": false,
+            "update_only": false,
+            "use_backend": "auto",
+            "validate_certs": true
+        }
+    },
+    "msg": "",
+    "rc": 0,
+    "results": [
+        "docker is not installed",
+        "docker-common is not installed",
+        "docker-engine is not installed"
+    ]
+}
+ok: [jenkins-mater] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "autoremove": false,
+            "bugfix": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "installroot": "/",
+            "list": null,
+            "name": [
+                "docker",
+                "docker-common",
+                "docker-engine"
+            ],
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "state": "absent",
+            "update_cache": false,
+            "update_only": false,
+            "use_backend": "auto",
+            "validate_certs": true
+        }
+    },
+    "msg": "",
+    "rc": 0,
+    "results": [
+        "docker is not installed",
+        "docker-common is not installed",
+        "docker-engine is not installed"
+    ]
+}
+
+TASK [docker : Add Docker GPG key.] **********************************************************************************************************************************************************************************************************
+task path: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/setup-RedHat.yml:10
+<192.168.45.42> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.42
+<192.168.45.41> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.41
+<192.168.45.40> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.40
+<192.168.45.40> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.384671-97648522773846 `" && echo ansible-tmp-1567408051.384671-97648522773846="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.384671-97648522773846 `" ) && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.341745-212243516218089 `" && echo ansible-tmp-1567408051.341745-212243516218089="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.341745-212243516218089 `" ) && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.3626208-239944864504638 `" && echo ansible-tmp-1567408051.3626208-239944864504638="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.3626208-239944864504638 `" ) && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/packaging/os/rpm_key.py
+<192.168.45.40> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpp6d0hiul TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.384671-97648522773846/AnsiballZ_rpm_key.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/packaging/os/rpm_key.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/packaging/os/rpm_key.py
+<192.168.45.41> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpber4fj8g TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.3626208-239944864504638/AnsiballZ_rpm_key.py
+<192.168.45.42> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpbopc42u2 TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.341745-212243516218089/AnsiballZ_rpm_key.py
+<192.168.45.40> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.384671-97648522773846/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.384671-97648522773846/AnsiballZ_rpm_key.py && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.341745-212243516218089/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.341745-212243516218089/AnsiballZ_rpm_key.py && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.3626208-239944864504638/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.3626208-239944864504638/AnsiballZ_rpm_key.py && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-uwhtmepzoswyqzncdawijtptghdjlyem; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.384671-97648522773846/AnsiballZ_rpm_key.py'"'"' && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-knkngbwrqwvoeliozxfdhdtrczlychsd; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.341745-212243516218089/AnsiballZ_rpm_key.py'"'"' && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-kucxsoepxqnoxsbteyghhmkhmfktvslg; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.3626208-239944864504638/AnsiballZ_rpm_key.py'"'"' && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.341745-212243516218089/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.384671-97648522773846/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408051.3626208-239944864504638/ > /dev/null 2>&1 && sleep 0'
+ok: [jenkins-slave-2] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "key": "https://download.docker.com/linux/centos/gpg",
+            "state": "present",
+            "validate_certs": true
+        }
+    }
+}
+ok: [jenkins-mater] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "key": "https://download.docker.com/linux/centos/gpg",
+            "state": "present",
+            "validate_certs": true
+        }
+    }
+}
+ok: [jenkins-slave-1] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "key": "https://download.docker.com/linux/centos/gpg",
+            "state": "present",
+            "validate_certs": true
+        }
+    }
+}
+
+TASK [docker : Add Docker repository.] *******************************************************************************************************************************************************************************************************
+task path: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/setup-RedHat.yml:15
+<192.168.45.42> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.42
+<192.168.45.41> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.41
+<192.168.45.40> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.40
+<192.168.45.42> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.1593962-237577004304673 `" && echo ansible-tmp-1567408053.1593962-237577004304673="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.1593962-237577004304673 `" ) && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.1826491-2017755546846 `" && echo ansible-tmp-1567408053.1826491-2017755546846="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.1826491-2017755546846 `" ) && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.203197-240220195085705 `" && echo ansible-tmp-1567408053.203197-240220195085705="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.203197-240220195085705 `" ) && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/net_tools/basics/get_url.py
+<192.168.45.40> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpc21x05za TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.203197-240220195085705/AnsiballZ_get_url.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/net_tools/basics/get_url.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/net_tools/basics/get_url.py
+<192.168.45.41> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpdfkiyeg_ TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.1826491-2017755546846/AnsiballZ_get_url.py
+<192.168.45.42> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpm3fdzsv5 TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.1593962-237577004304673/AnsiballZ_get_url.py
+<192.168.45.40> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.203197-240220195085705/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.203197-240220195085705/AnsiballZ_get_url.py && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.1593962-237577004304673/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.1593962-237577004304673/AnsiballZ_get_url.py && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.1826491-2017755546846/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.1826491-2017755546846/AnsiballZ_get_url.py && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-ggjuimdeptmqvlzueargwihdjaizyraa; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.203197-240220195085705/AnsiballZ_get_url.py'"'"' && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-qzsxpksynloeawvkljflmyoxfiecrmtl; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.1593962-237577004304673/AnsiballZ_get_url.py'"'"' && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-ngpwoycpazbakdmaxnrjdgvzslcjnbgd; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.1826491-2017755546846/AnsiballZ_get_url.py'"'"' && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.1826491-2017755546846/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.1593962-237577004304673/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.203197-240220195085705/ > /dev/null 2>&1 && sleep 0'
+ok: [jenkins-mater] => {
+    "changed": false,
+    "dest": "/etc/yum.repos.d/docker-ce.repo",
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "attributes": null,
+            "backup": null,
+            "checksum": "",
+            "client_cert": null,
+            "client_key": null,
+            "content": null,
+            "delimiter": null,
+            "dest": "/etc/yum.repos.d/docker-ce.repo",
+            "directory_mode": null,
+            "follow": false,
+            "force": false,
+            "force_basic_auth": false,
+            "group": "root",
+            "headers": null,
+            "http_agent": "ansible-httpget",
+            "mode": 420,
+            "owner": "root",
+            "path": "/etc/yum.repos.d/docker-ce.repo",
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "sha256sum": "",
+            "src": null,
+            "timeout": 10,
+            "tmp_dest": null,
+            "unsafe_writes": null,
+            "url": "https://download.docker.com/linux/centos/docker-ce.repo",
+            "url_password": null,
+            "url_username": null,
+            "use_proxy": true,
+            "validate_certs": true
+        }
+    },
+    "mode": "0644",
+    "msg": "file already exists",
+    "owner": "root",
+    "size": 2428,
+    "state": "file",
+    "uid": 0,
+    "url": "https://download.docker.com/linux/centos/docker-ce.repo"
+}
+ok: [jenkins-slave-2] => {
+    "changed": false,
+    "dest": "/etc/yum.repos.d/docker-ce.repo",
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "attributes": null,
+            "backup": null,
+            "checksum": "",
+            "client_cert": null,
+            "client_key": null,
+            "content": null,
+            "delimiter": null,
+            "dest": "/etc/yum.repos.d/docker-ce.repo",
+            "directory_mode": null,
+            "follow": false,
+            "force": false,
+            "force_basic_auth": false,
+            "group": "root",
+            "headers": null,
+            "http_agent": "ansible-httpget",
+            "mode": 420,
+            "owner": "root",
+            "path": "/etc/yum.repos.d/docker-ce.repo",
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "sha256sum": "",
+            "src": null,
+            "timeout": 10,
+            "tmp_dest": null,
+            "unsafe_writes": null,
+            "url": "https://download.docker.com/linux/centos/docker-ce.repo",
+            "url_password": null,
+            "url_username": null,
+            "use_proxy": true,
+            "validate_certs": true
+        }
+    },
+    "mode": "0644",
+    "msg": "file already exists",
+    "owner": "root",
+    "size": 2428,
+    "state": "file",
+    "uid": 0,
+    "url": "https://download.docker.com/linux/centos/docker-ce.repo"
+}
+ok: [jenkins-slave-1] => {
+    "changed": false,
+    "dest": "/etc/yum.repos.d/docker-ce.repo",
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "attributes": null,
+            "backup": null,
+            "checksum": "",
+            "client_cert": null,
+            "client_key": null,
+            "content": null,
+            "delimiter": null,
+            "dest": "/etc/yum.repos.d/docker-ce.repo",
+            "directory_mode": null,
+            "follow": false,
+            "force": false,
+            "force_basic_auth": false,
+            "group": "root",
+            "headers": null,
+            "http_agent": "ansible-httpget",
+            "mode": 420,
+            "owner": "root",
+            "path": "/etc/yum.repos.d/docker-ce.repo",
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "sha256sum": "",
+            "src": null,
+            "timeout": 10,
+            "tmp_dest": null,
+            "unsafe_writes": null,
+            "url": "https://download.docker.com/linux/centos/docker-ce.repo",
+            "url_password": null,
+            "url_username": null,
+            "use_proxy": true,
+            "validate_certs": true
+        }
+    },
+    "mode": "0644",
+    "msg": "file already exists",
+    "owner": "root",
+    "size": 2428,
+    "state": "file",
+    "uid": 0,
+    "url": "https://download.docker.com/linux/centos/docker-ce.repo"
+}
+
+TASK [docker : Configure Docker Edge repo.] **************************************************************************************************************************************************************************************************
+task path: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/setup-RedHat.yml:23
+<192.168.45.42> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.42
+<192.168.45.41> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.41
+<192.168.45.40> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.40
+<192.168.45.42> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.823093-11209920882179 `" && echo ansible-tmp-1567408053.823093-11209920882179="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.823093-11209920882179 `" ) && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.844725-49189029000935 `" && echo ansible-tmp-1567408053.844725-49189029000935="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.844725-49189029000935 `" ) && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.866705-219454630366539 `" && echo ansible-tmp-1567408053.866705-219454630366539="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.866705-219454630366539 `" ) && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/files/ini_file.py
+<192.168.45.42> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpkxmhj2ne TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.823093-11209920882179/AnsiballZ_ini_file.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/files/ini_file.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/files/ini_file.py
+<192.168.45.41> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpcxcjuh7s TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.844725-49189029000935/AnsiballZ_ini_file.py
+<192.168.45.40> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpllz7sc3n TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.866705-219454630366539/AnsiballZ_ini_file.py
+<192.168.45.42> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.823093-11209920882179/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.823093-11209920882179/AnsiballZ_ini_file.py && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.844725-49189029000935/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.844725-49189029000935/AnsiballZ_ini_file.py && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.866705-219454630366539/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.866705-219454630366539/AnsiballZ_ini_file.py && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-nilbdwqvsqbeiyrtpgavzhpzawpnqfrs; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.823093-11209920882179/AnsiballZ_ini_file.py'"'"' && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-pcljflidvbmdlmcrinfhtnbihhjjruco; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.844725-49189029000935/AnsiballZ_ini_file.py'"'"' && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-sdseijwdajhnduqeqivnczjofivtehwj; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.866705-219454630366539/AnsiballZ_ini_file.py'"'"' && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.823093-11209920882179/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.844725-49189029000935/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408053.866705-219454630366539/ > /dev/null 2>&1 && sleep 0'
+ok: [jenkins-slave-2] => {
+    "changed": false,
+    "diff": {
+        "after": "",
+        "after_header": "/etc/yum.repos.d/docker-ce.repo (content)",
+        "before": "",
+        "before_header": "/etc/yum.repos.d/docker-ce.repo (content)"
+    },
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "allow_no_value": false,
+            "attributes": null,
+            "backup": false,
+            "content": null,
+            "create": true,
+            "delimiter": null,
+            "dest": "/etc/yum.repos.d/docker-ce.repo",
+            "directory_mode": null,
+            "follow": false,
+            "force": null,
+            "group": null,
+            "mode": null,
+            "no_extra_spaces": false,
+            "option": "enabled",
+            "owner": null,
+            "path": "/etc/yum.repos.d/docker-ce.repo",
+            "regexp": null,
+            "remote_src": null,
+            "section": "docker-ce-edge",
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "present",
+            "unsafe_writes": null,
+            "value": "0"
+        }
+    },
+    "mode": "0644",
+    "msg": "OK",
+    "owner": "root",
+    "path": "/etc/yum.repos.d/docker-ce.repo",
+    "size": 2428,
+    "state": "file",
+    "uid": 0
+}
+ok: [jenkins-slave-1] => {
+    "changed": false,
+    "diff": {
+        "after": "",
+        "after_header": "/etc/yum.repos.d/docker-ce.repo (content)",
+        "before": "",
+        "before_header": "/etc/yum.repos.d/docker-ce.repo (content)"
+    },
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "allow_no_value": false,
+            "attributes": null,
+            "backup": false,
+            "content": null,
+            "create": true,
+            "delimiter": null,
+            "dest": "/etc/yum.repos.d/docker-ce.repo",
+            "directory_mode": null,
+            "follow": false,
+            "force": null,
+            "group": null,
+            "mode": null,
+            "no_extra_spaces": false,
+            "option": "enabled",
+            "owner": null,
+            "path": "/etc/yum.repos.d/docker-ce.repo",
+            "regexp": null,
+            "remote_src": null,
+            "section": "docker-ce-edge",
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "present",
+            "unsafe_writes": null,
+            "value": "0"
+        }
+    },
+    "mode": "0644",
+    "msg": "OK",
+    "owner": "root",
+    "path": "/etc/yum.repos.d/docker-ce.repo",
+    "size": 2428,
+    "state": "file",
+    "uid": 0
+}
+ok: [jenkins-mater] => {
+    "changed": false,
+    "diff": {
+        "after": "",
+        "after_header": "/etc/yum.repos.d/docker-ce.repo (content)",
+        "before": "",
+        "before_header": "/etc/yum.repos.d/docker-ce.repo (content)"
+    },
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "allow_no_value": false,
+            "attributes": null,
+            "backup": false,
+            "content": null,
+            "create": true,
+            "delimiter": null,
+            "dest": "/etc/yum.repos.d/docker-ce.repo",
+            "directory_mode": null,
+            "follow": false,
+            "force": null,
+            "group": null,
+            "mode": null,
+            "no_extra_spaces": false,
+            "option": "enabled",
+            "owner": null,
+            "path": "/etc/yum.repos.d/docker-ce.repo",
+            "regexp": null,
+            "remote_src": null,
+            "section": "docker-ce-edge",
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "present",
+            "unsafe_writes": null,
+            "value": "0"
+        }
+    },
+    "mode": "0644",
+    "msg": "OK",
+    "owner": "root",
+    "path": "/etc/yum.repos.d/docker-ce.repo",
+    "size": 2428,
+    "state": "file",
+    "uid": 0
+}
+
+TASK [docker : Configure Docker Test repo.] **************************************************************************************************************************************************************************************************
+task path: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/setup-RedHat.yml:30
+<192.168.45.42> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.42
+<192.168.45.41> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.41
+<192.168.45.40> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.40
+<192.168.45.42> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.4106188-54223863231614 `" && echo ansible-tmp-1567408054.4106188-54223863231614="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.4106188-54223863231614 `" ) && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.434585-35520517721616 `" && echo ansible-tmp-1567408054.434585-35520517721616="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.434585-35520517721616 `" ) && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/files/ini_file.py
+<192.168.45.42> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpjptr0i_y TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.4106188-54223863231614/AnsiballZ_ini_file.py
+<192.168.45.40> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/files/ini_file.py
+<192.168.45.41> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpm7gdxmef TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.434585-35520517721616/AnsiballZ_ini_file.py
+<192.168.45.40> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.456928-33379939455936 `" && echo ansible-tmp-1567408054.456928-33379939455936="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.456928-33379939455936 `" ) && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.4106188-54223863231614/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.4106188-54223863231614/AnsiballZ_ini_file.py && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.434585-35520517721616/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.434585-35520517721616/AnsiballZ_ini_file.py && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/files/ini_file.py
+<192.168.45.40> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpk03nh_h5 TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.456928-33379939455936/AnsiballZ_ini_file.py
+<192.168.45.42> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-vluzpignzqwtgbbjiqnzpkelecpxtqub; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.4106188-54223863231614/AnsiballZ_ini_file.py'"'"' && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-zkdpzkguacbcunvrwxorqjntuathtrsi; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.434585-35520517721616/AnsiballZ_ini_file.py'"'"' && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.456928-33379939455936/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.456928-33379939455936/AnsiballZ_ini_file.py && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-meexgfhmhvdvwuhhfotsegwrbaufkuzy; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.456928-33379939455936/AnsiballZ_ini_file.py'"'"' && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.434585-35520517721616/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.4106188-54223863231614/ > /dev/null 2>&1 && sleep 0'
+ok: [jenkins-slave-2] => {
+    "changed": false,
+    "diff": {
+        "after": "",
+        "after_header": "/etc/yum.repos.d/docker-ce.repo (content)",
+        "before": "",
+        "before_header": "/etc/yum.repos.d/docker-ce.repo (content)"
+    },
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "allow_no_value": false,
+            "attributes": null,
+            "backup": false,
+            "content": null,
+            "create": true,
+            "delimiter": null,
+            "dest": "/etc/yum.repos.d/docker-ce.repo",
+            "directory_mode": null,
+            "follow": false,
+            "force": null,
+            "group": null,
+            "mode": null,
+            "no_extra_spaces": false,
+            "option": "enabled",
+            "owner": null,
+            "path": "/etc/yum.repos.d/docker-ce.repo",
+            "regexp": null,
+            "remote_src": null,
+            "section": "docker-ce-test",
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "present",
+            "unsafe_writes": null,
+            "value": "0"
+        }
+    },
+    "mode": "0644",
+    "msg": "OK",
+    "owner": "root",
+    "path": "/etc/yum.repos.d/docker-ce.repo",
+    "size": 2428,
+    "state": "file",
+    "uid": 0
+}
+ok: [jenkins-slave-1] => {
+    "changed": false,
+    "diff": {
+        "after": "",
+        "after_header": "/etc/yum.repos.d/docker-ce.repo (content)",
+        "before": "",
+        "before_header": "/etc/yum.repos.d/docker-ce.repo (content)"
+    },
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "allow_no_value": false,
+            "attributes": null,
+            "backup": false,
+            "content": null,
+            "create": true,
+            "delimiter": null,
+            "dest": "/etc/yum.repos.d/docker-ce.repo",
+            "directory_mode": null,
+            "follow": false,
+            "force": null,
+            "group": null,
+            "mode": null,
+            "no_extra_spaces": false,
+            "option": "enabled",
+            "owner": null,
+            "path": "/etc/yum.repos.d/docker-ce.repo",
+            "regexp": null,
+            "remote_src": null,
+            "section": "docker-ce-test",
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "present",
+            "unsafe_writes": null,
+            "value": "0"
+        }
+    },
+    "mode": "0644",
+    "msg": "OK",
+    "owner": "root",
+    "path": "/etc/yum.repos.d/docker-ce.repo",
+    "size": 2428,
+    "state": "file",
+    "uid": 0
+}
+<192.168.45.40> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408054.456928-33379939455936/ > /dev/null 2>&1 && sleep 0'
+ok: [jenkins-mater] => {
+    "changed": false,
+    "diff": {
+        "after": "",
+        "after_header": "/etc/yum.repos.d/docker-ce.repo (content)",
+        "before": "",
+        "before_header": "/etc/yum.repos.d/docker-ce.repo (content)"
+    },
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "allow_no_value": false,
+            "attributes": null,
+            "backup": false,
+            "content": null,
+            "create": true,
+            "delimiter": null,
+            "dest": "/etc/yum.repos.d/docker-ce.repo",
+            "directory_mode": null,
+            "follow": false,
+            "force": null,
+            "group": null,
+            "mode": null,
+            "no_extra_spaces": false,
+            "option": "enabled",
+            "owner": null,
+            "path": "/etc/yum.repos.d/docker-ce.repo",
+            "regexp": null,
+            "remote_src": null,
+            "section": "docker-ce-test",
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "present",
+            "unsafe_writes": null,
+            "value": "0"
+        }
+    },
+    "mode": "0644",
+    "msg": "OK",
+    "owner": "root",
+    "path": "/etc/yum.repos.d/docker-ce.repo",
+    "size": 2428,
+    "state": "file",
+    "uid": 0
+}
+
+TASK [docker : include_tasks] ****************************************************************************************************************************************************************************************************************
+task path: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/main.yml:5
+skipping: [jenkins-slave-2] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+skipping: [jenkins-slave-1] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+skipping: [jenkins-mater] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [docker : Install Docker.] **************************************************************************************************************************************************************************************************************
+task path: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/main.yml:8
+Running yum
+<192.168.45.42> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.42
+Running yum
+<192.168.45.41> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.41
+Running yum
+<192.168.45.40> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.40
+<192.168.45.42> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.058285-120733932241317 `" && echo ansible-tmp-1567408055.058285-120733932241317="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.058285-120733932241317 `" ) && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.081187-216313919321601 `" && echo ansible-tmp-1567408055.081187-216313919321601="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.081187-216313919321601 `" ) && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/packaging/os/yum.py
+<192.168.45.42> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmp_u9v242w TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.058285-120733932241317/AnsiballZ_yum.py
+<192.168.45.40> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/packaging/os/yum.py
+<192.168.45.41> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpbn4dozzu TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.081187-216313919321601/AnsiballZ_yum.py
+<192.168.45.40> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.104057-59852557776755 `" && echo ansible-tmp-1567408055.104057-59852557776755="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.104057-59852557776755 `" ) && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.058285-120733932241317/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.058285-120733932241317/AnsiballZ_yum.py && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.081187-216313919321601/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.081187-216313919321601/AnsiballZ_yum.py && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/packaging/os/yum.py
+<192.168.45.40> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmp3u6g11ul TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.104057-59852557776755/AnsiballZ_yum.py
+<192.168.45.42> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-ythtwpravpuasimlxlqftvryijddhvmv; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.058285-120733932241317/AnsiballZ_yum.py'"'"' && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-fdgxawwrbzmezghbmwvsvizhwigzzpiy; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.081187-216313919321601/AnsiballZ_yum.py'"'"' && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.104057-59852557776755/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.104057-59852557776755/AnsiballZ_yum.py && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-wakewsudtksqkwxvrodizxganbhbwdos; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.104057-59852557776755/AnsiballZ_yum.py'"'"' && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.058285-120733932241317/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.081187-216313919321601/ > /dev/null 2>&1 && sleep 0'
+ok: [jenkins-slave-2] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "autoremove": false,
+            "bugfix": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "installroot": "/",
+            "list": null,
+            "name": [
+                "docker-ce"
+            ],
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "state": "present",
+            "update_cache": false,
+            "update_only": false,
+            "use_backend": "auto",
+            "validate_certs": true
+        }
+    },
+    "msg": "",
+    "rc": 0,
+    "results": [
+        "3:docker-ce-19.03.1-3.el7.x86_64 providing docker-ce is already installed"
+    ]
+}
+ok: [jenkins-slave-1] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "autoremove": false,
+            "bugfix": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "installroot": "/",
+            "list": null,
+            "name": [
+                "docker-ce"
+            ],
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "state": "present",
+            "update_cache": false,
+            "update_only": false,
+            "use_backend": "auto",
+            "validate_certs": true
+        }
+    },
+    "msg": "",
+    "rc": 0,
+    "results": [
+        "3:docker-ce-19.03.1-3.el7.x86_64 providing docker-ce is already installed"
+    ]
+}
+<192.168.45.40> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.104057-59852557776755/ > /dev/null 2>&1 && sleep 0'
+ok: [jenkins-mater] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "autoremove": false,
+            "bugfix": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "installroot": "/",
+            "list": null,
+            "name": [
+                "docker-ce"
+            ],
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "state": "present",
+            "update_cache": false,
+            "update_only": false,
+            "use_backend": "auto",
+            "validate_certs": true
+        }
+    },
+    "msg": "",
+    "rc": 0,
+    "results": [
+        "3:docker-ce-19.03.1-3.el7.x86_64 providing docker-ce is already installed"
+    ]
+}
+
+TASK [docker : Ensure containerd service dir exists.] ****************************************************************************************************************************************************************************************
+task path: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/docker-1809-shim.yml:2
+<192.168.45.42> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.42
+<192.168.45.41> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.41
+<192.168.45.40> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.40
+<192.168.45.41> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.812394-174296123366843 `" && echo ansible-tmp-1567408055.812394-174296123366843="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.812394-174296123366843 `" ) && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.789918-184632680024236 `" && echo ansible-tmp-1567408055.789918-184632680024236="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.789918-184632680024236 `" ) && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.769614-168733658073466 `" && echo ansible-tmp-1567408055.769614-168733658073466="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.769614-168733658073466 `" ) && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/files/file.py
+<192.168.45.41> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmp1ksqt8dy TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.789918-184632680024236/AnsiballZ_file.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/files/file.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/files/file.py
+<192.168.45.40> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmp2qhgkkhv TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.812394-174296123366843/AnsiballZ_file.py
+<192.168.45.42> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmp66tau49_ TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.769614-168733658073466/AnsiballZ_file.py
+<192.168.45.41> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.789918-184632680024236/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.789918-184632680024236/AnsiballZ_file.py && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.769614-168733658073466/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.769614-168733658073466/AnsiballZ_file.py && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.812394-174296123366843/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.812394-174296123366843/AnsiballZ_file.py && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-sdasdlzqpovvzamefqmnfuhpqovbwlom; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.789918-184632680024236/AnsiballZ_file.py'"'"' && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-nbbhfruozznmxubtlkneuhucmnjtkrol; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.812394-174296123366843/AnsiballZ_file.py'"'"' && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-gsdxyzhhplloixosuwiymqzrcuajulpd; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.769614-168733658073466/AnsiballZ_file.py'"'"' && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.812394-174296123366843/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.769614-168733658073466/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408055.789918-184632680024236/ > /dev/null 2>&1 && sleep 0'
+ok: [jenkins-mater] => {
+    "changed": false,
+    "diff": {
+        "after": {
+            "path": "/etc/systemd/system/containerd.service.d"
+        },
+        "before": {
+            "path": "/etc/systemd/system/containerd.service.d"
+        }
+    },
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "backup": null,
+            "content": null,
+            "delimiter": null,
+            "directory_mode": null,
+            "follow": true,
+            "force": false,
+            "group": null,
+            "mode": null,
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": null,
+            "path": "/etc/systemd/system/containerd.service.d",
+            "recurse": false,
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": null
+        }
+    },
+    "mode": "0755",
+    "owner": "root",
+    "path": "/etc/systemd/system/containerd.service.d",
+    "size": 26,
+    "state": "directory",
+    "uid": 0
+}
+ok: [jenkins-slave-1] => {
+    "changed": false,
+    "diff": {
+        "after": {
+            "path": "/etc/systemd/system/containerd.service.d"
+        },
+        "before": {
+            "path": "/etc/systemd/system/containerd.service.d"
+        }
+    },
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "backup": null,
+            "content": null,
+            "delimiter": null,
+            "directory_mode": null,
+            "follow": true,
+            "force": false,
+            "group": null,
+            "mode": null,
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": null,
+            "path": "/etc/systemd/system/containerd.service.d",
+            "recurse": false,
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": null
+        }
+    },
+    "mode": "0755",
+    "owner": "root",
+    "path": "/etc/systemd/system/containerd.service.d",
+    "size": 26,
+    "state": "directory",
+    "uid": 0
+}
+ok: [jenkins-slave-2] => {
+    "changed": false,
+    "diff": {
+        "after": {
+            "path": "/etc/systemd/system/containerd.service.d"
+        },
+        "before": {
+            "path": "/etc/systemd/system/containerd.service.d"
+        }
+    },
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "_diff_peek": null,
+            "_original_basename": null,
+            "access_time": null,
+            "access_time_format": "%Y%m%d%H%M.%S",
+            "attributes": null,
+            "backup": null,
+            "content": null,
+            "delimiter": null,
+            "directory_mode": null,
+            "follow": true,
+            "force": false,
+            "group": null,
+            "mode": null,
+            "modification_time": null,
+            "modification_time_format": "%Y%m%d%H%M.%S",
+            "owner": null,
+            "path": "/etc/systemd/system/containerd.service.d",
+            "recurse": false,
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": null,
+            "state": "directory",
+            "unsafe_writes": null
+        }
+    },
+    "mode": "0755",
+    "owner": "root",
+    "path": "/etc/systemd/system/containerd.service.d",
+    "size": 26,
+    "state": "directory",
+    "uid": 0
+}
+
+TASK [docker : Add shim to ensure Docker can start in all environments.] *********************************************************************************************************************************************************************
+task path: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/docker-1809-shim.yml:7
+<192.168.45.42> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.42
+<192.168.45.41> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.41
+<192.168.45.40> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.40
+<192.168.45.42> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.374702-26891405285540 `" && echo ansible-tmp-1567408056.374702-26891405285540="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.374702-26891405285540 `" ) && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.4189372-157436611284893 `" && echo ansible-tmp-1567408056.4189372-157436611284893="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.4189372-157436611284893 `" ) && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.396107-1257790007129 `" && echo ansible-tmp-1567408056.396107-1257790007129="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.396107-1257790007129 `" ) && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/files/stat.py
+<192.168.45.42> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpmnu6uv68 TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.374702-26891405285540/AnsiballZ_stat.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/files/stat.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/files/stat.py
+<192.168.45.41> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpshlbie18 TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.396107-1257790007129/AnsiballZ_stat.py
+<192.168.45.40> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmp5rh__abg TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.4189372-157436611284893/AnsiballZ_stat.py
+<192.168.45.42> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.374702-26891405285540/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.374702-26891405285540/AnsiballZ_stat.py && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.4189372-157436611284893/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.4189372-157436611284893/AnsiballZ_stat.py && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.396107-1257790007129/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.396107-1257790007129/AnsiballZ_stat.py && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-kopflbmhpulbubvwtitligzjhubnmzax; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.374702-26891405285540/AnsiballZ_stat.py'"'"' && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-rbcxtaeauadonmgaekejjldstiocutsz; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.4189372-157436611284893/AnsiballZ_stat.py'"'"' && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-yevtkjzimxcnnwnfirvhczxghniuxgsj; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.396107-1257790007129/AnsiballZ_stat.py'"'"' && sleep 0'
+<192.168.45.42> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmp0px36wyz/override.conf.j2 TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.374702-26891405285540/source
+<192.168.45.41> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpgcjeouvw/override.conf.j2 TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.396107-1257790007129/source
+<192.168.45.40> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpqfvblosm/override.conf.j2 TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.4189372-157436611284893/source
+<192.168.45.42> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.374702-26891405285540/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.374702-26891405285540/source && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.396107-1257790007129/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.396107-1257790007129/source && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.4189372-157436611284893/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.4189372-157436611284893/source && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/files/copy.py
+<192.168.45.42> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpxm2h30ht TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.374702-26891405285540/AnsiballZ_copy.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/files/copy.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/files/copy.py
+<192.168.45.40> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpw01xyoqx TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.4189372-157436611284893/AnsiballZ_copy.py
+<192.168.45.41> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpnof4yrfj TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.396107-1257790007129/AnsiballZ_copy.py
+<192.168.45.42> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.374702-26891405285540/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.374702-26891405285540/AnsiballZ_copy.py && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.4189372-157436611284893/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.4189372-157436611284893/AnsiballZ_copy.py && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.396107-1257790007129/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.396107-1257790007129/AnsiballZ_copy.py && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-hkqweegqziszmwakscgdhddwwdvuesxr; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.374702-26891405285540/AnsiballZ_copy.py'"'"' && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-lezvqkckmitzkuxjboaeczskwzxeldvo; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.4189372-157436611284893/AnsiballZ_copy.py'"'"' && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-rdsmvxzkjhzstujnmbgbzxdoljglwkou; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.396107-1257790007129/AnsiballZ_copy.py'"'"' && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.374702-26891405285540/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.4189372-157436611284893/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408056.396107-1257790007129/ > /dev/null 2>&1 && sleep 0'
+changed: [jenkins-slave-2] => {
+    "changed": true,
+    "checksum": "08361f9416a4f09f1f1119ff3a771440b7a5b865",
+    "dest": "/etc/systemd/system/containerd.service.d/override.conf",
+    "diff": [],
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "_original_basename": "override.conf.j2",
+            "attributes": null,
+            "backup": false,
+            "checksum": "08361f9416a4f09f1f1119ff3a771440b7a5b865",
+            "content": null,
+            "delimiter": null,
+            "dest": "/etc/systemd/system/containerd.service.d/override.conf",
+            "directory_mode": null,
+            "follow": false,
+            "force": true,
+            "group": null,
+            "local_follow": null,
+            "mode": null,
+            "owner": null,
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": "/home/vagrant/.ansible/tmp/ansible-tmp-1567408056.374702-26891405285540/source",
+            "unsafe_writes": null,
+            "validate": null
+        }
+    },
+    "md5sum": "e73df2f50824ed576f2546dcc876b363",
+    "mode": "0644",
+    "owner": "root",
+    "size": 42,
+    "src": "/home/vagrant/.ansible/tmp/ansible-tmp-1567408056.374702-26891405285540/source",
+    "state": "file",
+    "uid": 0
+}
+changed: [jenkins-mater] => {
+    "changed": true,
+    "checksum": "08361f9416a4f09f1f1119ff3a771440b7a5b865",
+    "dest": "/etc/systemd/system/containerd.service.d/override.conf",
+    "diff": [],
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "_original_basename": "override.conf.j2",
+            "attributes": null,
+            "backup": false,
+            "checksum": "08361f9416a4f09f1f1119ff3a771440b7a5b865",
+            "content": null,
+            "delimiter": null,
+            "dest": "/etc/systemd/system/containerd.service.d/override.conf",
+            "directory_mode": null,
+            "follow": false,
+            "force": true,
+            "group": null,
+            "local_follow": null,
+            "mode": null,
+            "owner": null,
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": "/home/vagrant/.ansible/tmp/ansible-tmp-1567408056.4189372-157436611284893/source",
+            "unsafe_writes": null,
+            "validate": null
+        }
+    },
+    "md5sum": "e73df2f50824ed576f2546dcc876b363",
+    "mode": "0644",
+    "owner": "root",
+    "size": 42,
+    "src": "/home/vagrant/.ansible/tmp/ansible-tmp-1567408056.4189372-157436611284893/source",
+    "state": "file",
+    "uid": 0
+}
+changed: [jenkins-slave-1] => {
+    "changed": true,
+    "checksum": "08361f9416a4f09f1f1119ff3a771440b7a5b865",
+    "dest": "/etc/systemd/system/containerd.service.d/override.conf",
+    "diff": [],
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "_original_basename": "override.conf.j2",
+            "attributes": null,
+            "backup": false,
+            "checksum": "08361f9416a4f09f1f1119ff3a771440b7a5b865",
+            "content": null,
+            "delimiter": null,
+            "dest": "/etc/systemd/system/containerd.service.d/override.conf",
+            "directory_mode": null,
+            "follow": false,
+            "force": true,
+            "group": null,
+            "local_follow": null,
+            "mode": null,
+            "owner": null,
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "src": "/home/vagrant/.ansible/tmp/ansible-tmp-1567408056.396107-1257790007129/source",
+            "unsafe_writes": null,
+            "validate": null
+        }
+    },
+    "md5sum": "e73df2f50824ed576f2546dcc876b363",
+    "mode": "0644",
+    "owner": "root",
+    "size": 42,
+    "src": "/home/vagrant/.ansible/tmp/ansible-tmp-1567408056.396107-1257790007129/source",
+    "state": "file",
+    "uid": 0
+}
+
+TASK [docker : Reload systemd daemon if template is changed.] ********************************************************************************************************************************************************************************
+task path: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/docker-1809-shim.yml:13
+<192.168.45.42> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.42
+<192.168.45.41> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.41
+<192.168.45.40> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.40
+<192.168.45.42> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.306106-162030495267760 `" && echo ansible-tmp-1567408057.306106-162030495267760="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.306106-162030495267760 `" ) && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.330372-160232675527645 `" && echo ansible-tmp-1567408057.330372-160232675527645="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.330372-160232675527645 `" ) && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.357355-271149027439824 `" && echo ansible-tmp-1567408057.357355-271149027439824="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.357355-271149027439824 `" ) && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/system/systemd.py
+<192.168.45.42> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpijp4ivbk TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.306106-162030495267760/AnsiballZ_systemd.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/system/systemd.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/system/systemd.py
+<192.168.45.41> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpm4js5lg_ TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.330372-160232675527645/AnsiballZ_systemd.py
+<192.168.45.40> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmp7fknfwb1 TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.357355-271149027439824/AnsiballZ_systemd.py
+<192.168.45.42> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.306106-162030495267760/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.306106-162030495267760/AnsiballZ_systemd.py && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.330372-160232675527645/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.330372-160232675527645/AnsiballZ_systemd.py && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.357355-271149027439824/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.357355-271149027439824/AnsiballZ_systemd.py && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-dmkssmaegrffiaiysxfrupancjujugmh; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.306106-162030495267760/AnsiballZ_systemd.py'"'"' && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-avkkhtzntbdpvvnaqlgxidklvneeahej; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.357355-271149027439824/AnsiballZ_systemd.py'"'"' && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-odajwhallmxfwolckekzenibquvdlbga; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.330372-160232675527645/AnsiballZ_systemd.py'"'"' && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.357355-271149027439824/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.330372-160232675527645/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.306106-162030495267760/ > /dev/null 2>&1 && sleep 0'
+ok: [jenkins-slave-2] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "daemon_reload": true,
+            "enabled": null,
+            "force": null,
+            "masked": null,
+            "name": null,
+            "no_block": false,
+            "scope": null,
+            "state": null,
+            "user": null
+        }
+    },
+    "name": null,
+    "status": {}
+}
+ok: [jenkins-mater] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "daemon_reload": true,
+            "enabled": null,
+            "force": null,
+            "masked": null,
+            "name": null,
+            "no_block": false,
+            "scope": null,
+            "state": null,
+            "user": null
+        }
+    },
+    "name": null,
+    "status": {}
+}
+ok: [jenkins-slave-1] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "daemon_reload": true,
+            "enabled": null,
+            "force": null,
+            "masked": null,
+            "name": null,
+            "no_block": false,
+            "scope": null,
+            "state": null,
+            "user": null
+        }
+    },
+    "name": null,
+    "status": {}
+}
+
+TASK [docker : Ensure Docker is started and enabled at boot.] ********************************************************************************************************************************************************************************
+task path: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/main.yml:17
+Running systemd
+<192.168.45.42> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.42
+Running systemd
+<192.168.45.41> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.41
+Running systemd
+<192.168.45.40> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.40
+<192.168.45.42> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.9464571-54572212447074 `" && echo ansible-tmp-1567408057.9464571-54572212447074="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.9464571-54572212447074 `" ) && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.967844-105069665652691 `" && echo ansible-tmp-1567408057.967844-105069665652691="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.967844-105069665652691 `" ) && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/system/systemd.py
+<192.168.45.42> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpvvge_2sc TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.9464571-54572212447074/AnsiballZ_systemd.py
+<192.168.45.40> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/system/systemd.py
+<192.168.45.41> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpdfxap0e7 TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.967844-105069665652691/AnsiballZ_systemd.py
+<192.168.45.40> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.990036-32750859451107 `" && echo ansible-tmp-1567408057.990036-32750859451107="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.990036-32750859451107 `" ) && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.9464571-54572212447074/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.9464571-54572212447074/AnsiballZ_systemd.py && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.967844-105069665652691/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.967844-105069665652691/AnsiballZ_systemd.py && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/system/systemd.py
+<192.168.45.40> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpr0ti5qzn TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.990036-32750859451107/AnsiballZ_systemd.py
+<192.168.45.42> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-weoaxhuoabhcuzjcvgrrrkprowaacsco; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.9464571-54572212447074/AnsiballZ_systemd.py'"'"' && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-lcxsgzkcfsayewxwwxlvyjbxitnwtzfk; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.967844-105069665652691/AnsiballZ_systemd.py'"'"' && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.990036-32750859451107/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.990036-32750859451107/AnsiballZ_systemd.py && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-tnbdyyxvgoascihpmaaxlkwucuzjomcw; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.990036-32750859451107/AnsiballZ_systemd.py'"'"' && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.9464571-54572212447074/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.967844-105069665652691/ > /dev/null 2>&1 && sleep 0'
+ok: [jenkins-slave-2] => {
+    "changed": false,
+    "enabled": true,
+    "invocation": {
+        "module_args": {
+            "daemon_reload": false,
+            "enabled": true,
+            "force": null,
+            "masked": null,
+            "name": "docker",
+            "no_block": false,
+            "scope": null,
+            "state": "started",
+            "user": null
+        }
+    },
+    "name": "docker",
+    "state": "started",
+    "status": {
+        "ActiveEnterTimestamp": "Mon 2019-09-02 03:30:54 BST",
+        "ActiveEnterTimestampMonotonic": "8123333215",
+        "ActiveExitTimestamp": "Mon 2019-09-02 03:30:54 BST",
+        "ActiveExitTimestampMonotonic": "8123097958",
+        "ActiveState": "active",
+        "After": "system.slice firewalld.service containerd.service docker.socket systemd-journald.socket network-online.target basic.target",
+        "AllowIsolate": "no",
+        "AmbientCapabilities": "0",
+        "AssertResult": "yes",
+        "AssertTimestamp": "Mon 2019-09-02 03:30:54 BST",
+        "AssertTimestampMonotonic": "8123116952",
+        "Before": "multi-user.target shutdown.target",
+        "BindsTo": "containerd.service",
+        "BlockIOAccounting": "no",
+        "BlockIOWeight": "18446744073709551615",
+        "CPUAccounting": "no",
+        "CPUQuotaPerSecUSec": "infinity",
+        "CPUSchedulingPolicy": "0",
+        "CPUSchedulingPriority": "0",
+        "CPUSchedulingResetOnFork": "no",
+        "CPUShares": "18446744073709551615",
+        "CanIsolate": "no",
+        "CanReload": "yes",
+        "CanStart": "yes",
+        "CanStop": "yes",
+        "CapabilityBoundingSet": "18446744073709551615",
+        "ConditionResult": "yes",
+        "ConditionTimestamp": "Mon 2019-09-02 03:30:54 BST",
+        "ConditionTimestampMonotonic": "8123116952",
+        "Conflicts": "shutdown.target",
+        "ConsistsOf": "docker.socket",
+        "ControlGroup": "/system.slice/docker.service",
+        "ControlPID": "0",
+        "DefaultDependencies": "yes",
+        "Delegate": "yes",
+        "Description": "Docker Application Container Engine",
+        "DevicePolicy": "auto",
+        "Documentation": "https://docs.docker.com",
+        "ExecMainCode": "0",
+        "ExecMainExitTimestampMonotonic": "0",
+        "ExecMainPID": "16331",
+        "ExecMainStartTimestamp": "Mon 2019-09-02 03:30:54 BST",
+        "ExecMainStartTimestampMonotonic": "8123118552",
+        "ExecMainStatus": "0",
+        "ExecReload": "{ path=/bin/kill ; argv[]=/bin/kill -s HUP $MAINPID ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+        "ExecStart": "{ path=/usr/bin/dockerd ; argv[]=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+        "FailureAction": "none",
+        "FileDescriptorStoreMax": "0",
+        "FragmentPath": "/usr/lib/systemd/system/docker.service",
+        "GuessMainPID": "yes",
+        "IOScheduling": "0",
+        "Id": "docker.service",
+        "IgnoreOnIsolate": "no",
+        "IgnoreOnSnapshot": "no",
+        "IgnoreSIGPIPE": "yes",
+        "InactiveEnterTimestamp": "Mon 2019-09-02 03:30:54 BST",
+        "InactiveEnterTimestampMonotonic": "8123112908",
+        "InactiveExitTimestamp": "Mon 2019-09-02 03:30:54 BST",
+        "InactiveExitTimestampMonotonic": "8123118617",
+        "JobTimeoutAction": "none",
+        "JobTimeoutUSec": "0",
+        "KillMode": "process",
+        "KillSignal": "15",
+        "LimitAS": "18446744073709551615",
+        "LimitCORE": "18446744073709551615",
+        "LimitCPU": "18446744073709551615",
+        "LimitDATA": "18446744073709551615",
+        "LimitFSIZE": "18446744073709551615",
+        "LimitLOCKS": "18446744073709551615",
+        "LimitMEMLOCK": "65536",
+        "LimitMSGQUEUE": "819200",
+        "LimitNICE": "0",
+        "LimitNOFILE": "18446744073709551615",
+        "LimitNPROC": "18446744073709551615",
+        "LimitRSS": "18446744073709551615",
+        "LimitRTPRIO": "0",
+        "LimitRTTIME": "18446744073709551615",
+        "LimitSIGPENDING": "3897",
+        "LimitSTACK": "18446744073709551615",
+        "LoadState": "loaded",
+        "MainPID": "16331",
+        "MemoryAccounting": "no",
+        "MemoryCurrent": "18446744073709551615",
+        "MemoryLimit": "18446744073709551615",
+        "MountFlags": "0",
+        "Names": "docker.service",
+        "NeedDaemonReload": "no",
+        "Nice": "0",
+        "NoNewPrivileges": "no",
+        "NonBlocking": "no",
+        "NotifyAccess": "main",
+        "OOMScoreAdjust": "0",
+        "OnFailureJobMode": "replace",
+        "PermissionsStartOnly": "no",
+        "PrivateDevices": "no",
+        "PrivateNetwork": "no",
+        "PrivateTmp": "no",
+        "ProtectHome": "no",
+        "ProtectSystem": "no",
+        "RefuseManualStart": "no",
+        "RefuseManualStop": "no",
+        "RemainAfterExit": "no",
+        "Requires": "docker.socket basic.target",
+        "Restart": "always",
+        "RestartUSec": "2s",
+        "Result": "success",
+        "RootDirectoryStartOnly": "no",
+        "RuntimeDirectoryMode": "0755",
+        "SameProcessGroup": "no",
+        "SecureBits": "0",
+        "SendSIGHUP": "no",
+        "SendSIGKILL": "yes",
+        "Slice": "system.slice",
+        "StandardError": "inherit",
+        "StandardInput": "null",
+        "StandardOutput": "journal",
+        "StartLimitAction": "none",
+        "StartLimitBurst": "3",
+        "StartLimitInterval": "60000000",
+        "StartupBlockIOWeight": "18446744073709551615",
+        "StartupCPUShares": "18446744073709551615",
+        "StatusErrno": "0",
+        "StopWhenUnneeded": "no",
+        "SubState": "running",
+        "SyslogLevelPrefix": "yes",
+        "SyslogPriority": "30",
+        "SystemCallErrorNumber": "0",
+        "TTYReset": "no",
+        "TTYVHangup": "no",
+        "TTYVTDisallocate": "no",
+        "TasksAccounting": "no",
+        "TasksCurrent": "18446744073709551615",
+        "TasksMax": "18446744073709551615",
+        "TimeoutStartUSec": "0",
+        "TimeoutStopUSec": "0",
+        "TimerSlackNSec": "50000",
+        "Transient": "no",
+        "TriggeredBy": "docker.socket",
+        "Type": "notify",
+        "UMask": "0022",
+        "UnitFilePreset": "disabled",
+        "UnitFileState": "enabled",
+        "WantedBy": "multi-user.target",
+        "Wants": "network-online.target system.slice",
+        "WatchdogTimestamp": "Mon 2019-09-02 03:30:54 BST",
+        "WatchdogTimestampMonotonic": "8123333183",
+        "WatchdogUSec": "0"
+    }
+}
+ok: [jenkins-slave-1] => {
+    "changed": false,
+    "enabled": true,
+    "invocation": {
+        "module_args": {
+            "daemon_reload": false,
+            "enabled": true,
+            "force": null,
+            "masked": null,
+            "name": "docker",
+            "no_block": false,
+            "scope": null,
+            "state": "started",
+            "user": null
+        }
+    },
+    "name": "docker",
+    "state": "started",
+    "status": {
+        "ActiveEnterTimestamp": "Mon 2019-09-02 03:30:54 BST",
+        "ActiveEnterTimestampMonotonic": "8155249661",
+        "ActiveExitTimestamp": "Mon 2019-09-02 03:30:54 BST",
+        "ActiveExitTimestampMonotonic": "8155013575",
+        "ActiveState": "active",
+        "After": "firewalld.service basic.target system.slice systemd-journald.socket containerd.service docker.socket network-online.target",
+        "AllowIsolate": "no",
+        "AmbientCapabilities": "0",
+        "AssertResult": "yes",
+        "AssertTimestamp": "Mon 2019-09-02 03:30:54 BST",
+        "AssertTimestampMonotonic": "8155033378",
+        "Before": "shutdown.target multi-user.target",
+        "BindsTo": "containerd.service",
+        "BlockIOAccounting": "no",
+        "BlockIOWeight": "18446744073709551615",
+        "CPUAccounting": "no",
+        "CPUQuotaPerSecUSec": "infinity",
+        "CPUSchedulingPolicy": "0",
+        "CPUSchedulingPriority": "0",
+        "CPUSchedulingResetOnFork": "no",
+        "CPUShares": "18446744073709551615",
+        "CanIsolate": "no",
+        "CanReload": "yes",
+        "CanStart": "yes",
+        "CanStop": "yes",
+        "CapabilityBoundingSet": "18446744073709551615",
+        "ConditionResult": "yes",
+        "ConditionTimestamp": "Mon 2019-09-02 03:30:54 BST",
+        "ConditionTimestampMonotonic": "8155033378",
+        "Conflicts": "shutdown.target",
+        "ConsistsOf": "docker.socket",
+        "ControlGroup": "/system.slice/docker.service",
+        "ControlPID": "0",
+        "DefaultDependencies": "yes",
+        "Delegate": "yes",
+        "Description": "Docker Application Container Engine",
+        "DevicePolicy": "auto",
+        "Documentation": "https://docs.docker.com",
+        "ExecMainCode": "0",
+        "ExecMainExitTimestampMonotonic": "0",
+        "ExecMainPID": "16401",
+        "ExecMainStartTimestamp": "Mon 2019-09-02 03:30:54 BST",
+        "ExecMainStartTimestampMonotonic": "8155033806",
+        "ExecMainStatus": "0",
+        "ExecReload": "{ path=/bin/kill ; argv[]=/bin/kill -s HUP $MAINPID ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+        "ExecStart": "{ path=/usr/bin/dockerd ; argv[]=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+        "FailureAction": "none",
+        "FileDescriptorStoreMax": "0",
+        "FragmentPath": "/usr/lib/systemd/system/docker.service",
+        "GuessMainPID": "yes",
+        "IOScheduling": "0",
+        "Id": "docker.service",
+        "IgnoreOnIsolate": "no",
+        "IgnoreOnSnapshot": "no",
+        "IgnoreSIGPIPE": "yes",
+        "InactiveEnterTimestamp": "Mon 2019-09-02 03:30:54 BST",
+        "InactiveEnterTimestampMonotonic": "8155029291",
+        "InactiveExitTimestamp": "Mon 2019-09-02 03:30:54 BST",
+        "InactiveExitTimestampMonotonic": "8155033843",
+        "JobTimeoutAction": "none",
+        "JobTimeoutUSec": "0",
+        "KillMode": "process",
+        "KillSignal": "15",
+        "LimitAS": "18446744073709551615",
+        "LimitCORE": "18446744073709551615",
+        "LimitCPU": "18446744073709551615",
+        "LimitDATA": "18446744073709551615",
+        "LimitFSIZE": "18446744073709551615",
+        "LimitLOCKS": "18446744073709551615",
+        "LimitMEMLOCK": "65536",
+        "LimitMSGQUEUE": "819200",
+        "LimitNICE": "0",
+        "LimitNOFILE": "18446744073709551615",
+        "LimitNPROC": "18446744073709551615",
+        "LimitRSS": "18446744073709551615",
+        "LimitRTPRIO": "0",
+        "LimitRTTIME": "18446744073709551615",
+        "LimitSIGPENDING": "3897",
+        "LimitSTACK": "18446744073709551615",
+        "LoadState": "loaded",
+        "MainPID": "16401",
+        "MemoryAccounting": "no",
+        "MemoryCurrent": "18446744073709551615",
+        "MemoryLimit": "18446744073709551615",
+        "MountFlags": "0",
+        "Names": "docker.service",
+        "NeedDaemonReload": "no",
+        "Nice": "0",
+        "NoNewPrivileges": "no",
+        "NonBlocking": "no",
+        "NotifyAccess": "main",
+        "OOMScoreAdjust": "0",
+        "OnFailureJobMode": "replace",
+        "PermissionsStartOnly": "no",
+        "PrivateDevices": "no",
+        "PrivateNetwork": "no",
+        "PrivateTmp": "no",
+        "ProtectHome": "no",
+        "ProtectSystem": "no",
+        "RefuseManualStart": "no",
+        "RefuseManualStop": "no",
+        "RemainAfterExit": "no",
+        "Requires": "basic.target docker.socket",
+        "Restart": "always",
+        "RestartUSec": "2s",
+        "Result": "success",
+        "RootDirectoryStartOnly": "no",
+        "RuntimeDirectoryMode": "0755",
+        "SameProcessGroup": "no",
+        "SecureBits": "0",
+        "SendSIGHUP": "no",
+        "SendSIGKILL": "yes",
+        "Slice": "system.slice",
+        "StandardError": "inherit",
+        "StandardInput": "null",
+        "StandardOutput": "journal",
+        "StartLimitAction": "none",
+        "StartLimitBurst": "3",
+        "StartLimitInterval": "60000000",
+        "StartupBlockIOWeight": "18446744073709551615",
+        "StartupCPUShares": "18446744073709551615",
+        "StatusErrno": "0",
+        "StopWhenUnneeded": "no",
+        "SubState": "running",
+        "SyslogLevelPrefix": "yes",
+        "SyslogPriority": "30",
+        "SystemCallErrorNumber": "0",
+        "TTYReset": "no",
+        "TTYVHangup": "no",
+        "TTYVTDisallocate": "no",
+        "TasksAccounting": "no",
+        "TasksCurrent": "18446744073709551615",
+        "TasksMax": "18446744073709551615",
+        "TimeoutStartUSec": "0",
+        "TimeoutStopUSec": "0",
+        "TimerSlackNSec": "50000",
+        "Transient": "no",
+        "TriggeredBy": "docker.socket",
+        "Type": "notify",
+        "UMask": "0022",
+        "UnitFilePreset": "disabled",
+        "UnitFileState": "enabled",
+        "WantedBy": "multi-user.target",
+        "Wants": "network-online.target system.slice",
+        "WatchdogTimestamp": "Mon 2019-09-02 03:30:54 BST",
+        "WatchdogTimestampMonotonic": "8155249609",
+        "WatchdogUSec": "0"
+    }
+}
+<192.168.45.40> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408057.990036-32750859451107/ > /dev/null 2>&1 && sleep 0'
+changed: [jenkins-mater] => {
+    "changed": true,
+    "enabled": true,
+    "invocation": {
+        "module_args": {
+            "daemon_reload": false,
+            "enabled": true,
+            "force": null,
+            "masked": null,
+            "name": "docker",
+            "no_block": false,
+            "scope": null,
+            "state": "started",
+            "user": null
+        }
+    },
+    "name": "docker",
+    "state": "started",
+    "status": {
+        "ActiveEnterTimestamp": "Mon 2019-09-02 03:30:56 BST",
+        "ActiveEnterTimestampMonotonic": "8189042027",
+        "ActiveExitTimestamp": "Mon 2019-09-02 07:59:30 BST",
+        "ActiveExitTimestampMonotonic": "19853064668",
+        "ActiveState": "inactive",
+        "After": "systemd-journald.socket network-online.target system.slice docker.socket firewalld.service basic.target containerd.service",
+        "AllowIsolate": "no",
+        "AmbientCapabilities": "0",
+        "AssertResult": "yes",
+        "AssertTimestamp": "Mon 2019-09-02 03:30:56 BST",
+        "AssertTimestampMonotonic": "8188829366",
+        "Before": "multi-user.target shutdown.target",
+        "BindsTo": "containerd.service",
+        "BlockIOAccounting": "no",
+        "BlockIOWeight": "18446744073709551615",
+        "CPUAccounting": "no",
+        "CPUQuotaPerSecUSec": "infinity",
+        "CPUSchedulingPolicy": "0",
+        "CPUSchedulingPriority": "0",
+        "CPUSchedulingResetOnFork": "no",
+        "CPUShares": "18446744073709551615",
+        "CanIsolate": "no",
+        "CanReload": "yes",
+        "CanStart": "yes",
+        "CanStop": "yes",
+        "CapabilityBoundingSet": "18446744073709551615",
+        "ConditionResult": "yes",
+        "ConditionTimestamp": "Mon 2019-09-02 03:30:56 BST",
+        "ConditionTimestampMonotonic": "8188829366",
+        "Conflicts": "shutdown.target",
+        "ConsistsOf": "docker.socket",
+        "ControlPID": "0",
+        "DefaultDependencies": "yes",
+        "Delegate": "yes",
+        "Description": "Docker Application Container Engine",
+        "DevicePolicy": "auto",
+        "Documentation": "https://docs.docker.com",
+        "ExecMainCode": "1",
+        "ExecMainExitTimestamp": "Mon 2019-09-02 07:59:32 BST",
+        "ExecMainExitTimestampMonotonic": "19855153161",
+        "ExecMainPID": "17469",
+        "ExecMainStartTimestamp": "Mon 2019-09-02 03:30:56 BST",
+        "ExecMainStartTimestampMonotonic": "8188829787",
+        "ExecMainStatus": "0",
+        "ExecReload": "{ path=/bin/kill ; argv[]=/bin/kill -s HUP $MAINPID ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+        "ExecStart": "{ path=/usr/bin/dockerd ; argv[]=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+        "FailureAction": "none",
+        "FileDescriptorStoreMax": "0",
+        "FragmentPath": "/usr/lib/systemd/system/docker.service",
+        "GuessMainPID": "yes",
+        "IOScheduling": "0",
+        "Id": "docker.service",
+        "IgnoreOnIsolate": "no",
+        "IgnoreOnSnapshot": "no",
+        "IgnoreSIGPIPE": "yes",
+        "InactiveEnterTimestamp": "Mon 2019-09-02 07:59:32 BST",
+        "InactiveEnterTimestampMonotonic": "19855153210",
+        "InactiveExitTimestamp": "Mon 2019-09-02 03:30:56 BST",
+        "InactiveExitTimestampMonotonic": "8188829820",
+        "JobTimeoutAction": "none",
+        "JobTimeoutUSec": "0",
+        "KillMode": "process",
+        "KillSignal": "15",
+        "LimitAS": "18446744073709551615",
+        "LimitCORE": "18446744073709551615",
+        "LimitCPU": "18446744073709551615",
+        "LimitDATA": "18446744073709551615",
+        "LimitFSIZE": "18446744073709551615",
+        "LimitLOCKS": "18446744073709551615",
+        "LimitMEMLOCK": "65536",
+        "LimitMSGQUEUE": "819200",
+        "LimitNICE": "0",
+        "LimitNOFILE": "18446744073709551615",
+        "LimitNPROC": "18446744073709551615",
+        "LimitRSS": "18446744073709551615",
+        "LimitRTPRIO": "0",
+        "LimitRTTIME": "18446744073709551615",
+        "LimitSIGPENDING": "3897",
+        "LimitSTACK": "18446744073709551615",
+        "LoadState": "loaded",
+        "MainPID": "0",
+        "MemoryAccounting": "no",
+        "MemoryCurrent": "18446744073709551615",
+        "MemoryLimit": "18446744073709551615",
+        "MountFlags": "0",
+        "Names": "docker.service",
+        "NeedDaemonReload": "no",
+        "Nice": "0",
+        "NoNewPrivileges": "no",
+        "NonBlocking": "no",
+        "NotifyAccess": "main",
+        "OOMScoreAdjust": "0",
+        "OnFailureJobMode": "replace",
+        "PermissionsStartOnly": "no",
+        "PrivateDevices": "no",
+        "PrivateNetwork": "no",
+        "PrivateTmp": "no",
+        "ProtectHome": "no",
+        "ProtectSystem": "no",
+        "RefuseManualStart": "no",
+        "RefuseManualStop": "no",
+        "RemainAfterExit": "no",
+        "Requires": "basic.target docker.socket",
+        "Restart": "always",
+        "RestartUSec": "2s",
+        "Result": "success",
+        "RootDirectoryStartOnly": "no",
+        "RuntimeDirectoryMode": "0755",
+        "SameProcessGroup": "no",
+        "SecureBits": "0",
+        "SendSIGHUP": "no",
+        "SendSIGKILL": "yes",
+        "Slice": "system.slice",
+        "StandardError": "inherit",
+        "StandardInput": "null",
+        "StandardOutput": "journal",
+        "StartLimitAction": "none",
+        "StartLimitBurst": "3",
+        "StartLimitInterval": "60000000",
+        "StartupBlockIOWeight": "18446744073709551615",
+        "StartupCPUShares": "18446744073709551615",
+        "StatusErrno": "0",
+        "StopWhenUnneeded": "no",
+        "SubState": "dead",
+        "SyslogLevelPrefix": "yes",
+        "SyslogPriority": "30",
+        "SystemCallErrorNumber": "0",
+        "TTYReset": "no",
+        "TTYVHangup": "no",
+        "TTYVTDisallocate": "no",
+        "TasksAccounting": "no",
+        "TasksCurrent": "18446744073709551615",
+        "TasksMax": "18446744073709551615",
+        "TimeoutStartUSec": "0",
+        "TimeoutStopUSec": "0",
+        "TimerSlackNSec": "50000",
+        "Transient": "no",
+        "TriggeredBy": "docker.socket",
+        "Type": "notify",
+        "UMask": "0022",
+        "UnitFilePreset": "disabled",
+        "UnitFileState": "enabled",
+        "WantedBy": "multi-user.target",
+        "Wants": "network-online.target system.slice",
+        "WatchdogTimestampMonotonic": "0",
+        "WatchdogUSec": "0"
+    }
+}
+META: ran handlers
+
+TASK [docker : include_tasks] ****************************************************************************************************************************************************************************************************************
+task path: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/main.yml:26
+included: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/docker-compose.yml for jenkins-slave-2, jenkins-slave-1, jenkins-mater
+
+TASK [docker : Check current docker-compose version.] ****************************************************************************************************************************************************************************************
+task path: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/docker-compose.yml:2
+<192.168.45.42> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.42
+<192.168.45.41> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.41
+<192.168.45.40> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.40
+<192.168.45.41> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.0633101-160051540544918 `" && echo ansible-tmp-1567408059.0633101-160051540544918="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.0633101-160051540544918 `" ) && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.0395179-231728577012523 `" && echo ansible-tmp-1567408059.0395179-231728577012523="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.0395179-231728577012523 `" ) && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.085023-97735481902289 `" && echo ansible-tmp-1567408059.085023-97735481902289="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.085023-97735481902289 `" ) && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/commands/command.py
+<192.168.45.41> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmp_u8w84gm TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.0633101-160051540544918/AnsiballZ_command.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/commands/command.py
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/commands/command.py
+<192.168.45.42> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpd9qlsrh0 TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.0395179-231728577012523/AnsiballZ_command.py
+<192.168.45.40> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpc3t4g0zo TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.085023-97735481902289/AnsiballZ_command.py
+<192.168.45.41> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.0633101-160051540544918/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.0633101-160051540544918/AnsiballZ_command.py && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.085023-97735481902289/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.085023-97735481902289/AnsiballZ_command.py && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.0395179-231728577012523/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.0395179-231728577012523/AnsiballZ_command.py && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-fwezvjludwfilbogmbgnmvnlnodkxaxi; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.0633101-160051540544918/AnsiballZ_command.py'"'"' && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-uqamxyichpnlermgpvpzfhxbazsdzpnu; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.0395179-231728577012523/AnsiballZ_command.py'"'"' && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-qjkiwtfnfavoyiatprkhvsvjgskxmnzu; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.085023-97735481902289/AnsiballZ_command.py'"'"' && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.085023-97735481902289/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.0395179-231728577012523/ > /dev/null 2>&1 && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.0633101-160051540544918/ > /dev/null 2>&1 && sleep 0'
+ok: [jenkins-slave-2] => {
+    "changed": false,
+    "cmd": "docker-compose --version",
+    "failed_when_result": false,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "docker-compose --version",
+            "_uses_shell": false,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "removes": null,
+            "stdin": null,
+            "warn": true
+        }
+    },
+    "msg": "[Errno 2] No such file or directory",
+    "rc": 2
+}
+ok: [jenkins-slave-1] => {
+    "changed": false,
+    "cmd": "docker-compose --version",
+    "failed_when_result": false,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "docker-compose --version",
+            "_uses_shell": false,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "removes": null,
+            "stdin": null,
+            "warn": true
+        }
+    },
+    "msg": "[Errno 2] No such file or directory",
+    "rc": 2
+}
+ok: [jenkins-mater] => {
+    "changed": false,
+    "cmd": "docker-compose --version",
+    "failed_when_result": false,
+    "invocation": {
+        "module_args": {
+            "_raw_params": "docker-compose --version",
+            "_uses_shell": false,
+            "argv": null,
+            "chdir": null,
+            "creates": null,
+            "executable": null,
+            "removes": null,
+            "stdin": null,
+            "warn": true
+        }
+    },
+    "msg": "[Errno 2] No such file or directory",
+    "rc": 2
+}
+
+TASK [docker : Delete existing docker-compose version if it's different.] ********************************************************************************************************************************************************************
+task path: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/docker-compose.yml:8
+skipping: [jenkins-slave-2] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+skipping: [jenkins-slave-1] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+skipping: [jenkins-mater] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+
+TASK [docker : Install Docker Compose (if configured).] **************************************************************************************************************************************************************************************
+task path: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/docker-compose.yml:16
+<192.168.45.42> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.42
+<192.168.45.41> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.41
+<192.168.45.40> ESTABLISH PARAMIKO SSH CONNECTION FOR USER: vagrant on PORT 22 TO 192.168.45.40
+<192.168.45.42> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.782071-11330300637148 `" && echo ansible-tmp-1567408059.782071-11330300637148="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.782071-11330300637148 `" ) && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.759063-140368930787599 `" && echo ansible-tmp-1567408059.759063-140368930787599="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.759063-140368930787599 `" ) && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/net_tools/basics/get_url.py
+<192.168.45.42> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpy2h12un4 TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.759063-140368930787599/AnsiballZ_get_url.py
+<192.168.45.40> EXEC /bin/sh -c 'echo ~vagrant && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/net_tools/basics/get_url.py
+<192.168.45.41> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpd89sau7k TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.782071-11330300637148/AnsiballZ_get_url.py
+<192.168.45.40> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.806932-267626082247543 `" && echo ansible-tmp-1567408059.806932-267626082247543="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.806932-267626082247543 `" ) && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.759063-140368930787599/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.759063-140368930787599/AnsiballZ_get_url.py && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.782071-11330300637148/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.782071-11330300637148/AnsiballZ_get_url.py && sleep 0'
+Using module file /usr/local/Cellar/ansible/2.7.5/libexec/lib/python3.7/site-packages/ansible/modules/net_tools/basics/get_url.py
+<192.168.45.40> PUT /Users/twcn/.ansible/tmp/ansible-local-26303e7wmxrcp/tmpujtowq3r TO /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.806932-267626082247543/AnsiballZ_get_url.py
+<192.168.45.42> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-kbaqwzoiqhvxxfzkzmqvumyuwhxmucon; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.759063-140368930787599/AnsiballZ_get_url.py'"'"' && sleep 0'
+<192.168.45.41> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-gwxwuoriicgsugzignqhvsmmoovxfffq; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.782071-11330300637148/AnsiballZ_get_url.py'"'"' && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.806932-267626082247543/ /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.806932-267626082247543/AnsiballZ_get_url.py && sleep 0'
+<192.168.45.40> EXEC /bin/sh -c 'sudo -H -S -n -u root /bin/sh -c '"'"'echo BECOME-SUCCESS-uuhxmmfbitsojkcpfsgxeukfdalgthsh; /usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.806932-267626082247543/AnsiballZ_get_url.py'"'"' && sleep 0'
+<192.168.45.42> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.759063-140368930787599/ > /dev/null 2>&1 && sleep 0'
+ok: [jenkins-slave-2] => {
+    "changed": false,
+    "dest": "/usr/local/bin/docker-compose",
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "attributes": null,
+            "backup": null,
+            "checksum": "",
+            "client_cert": null,
+            "client_key": null,
+            "content": null,
+            "delimiter": null,
+            "dest": "/usr/local/bin/docker-compose",
+            "directory_mode": null,
+            "follow": false,
+            "force": false,
+            "force_basic_auth": false,
+            "group": null,
+            "headers": null,
+            "http_agent": "ansible-httpget",
+            "mode": 493,
+            "owner": null,
+            "path": "/usr/local/bin/docker-compose",
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "sha256sum": "",
+            "src": null,
+            "timeout": 10,
+            "tmp_dest": null,
+            "unsafe_writes": null,
+            "url": "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-Linux-x86_64",
+            "url_password": null,
+            "url_username": null,
+            "use_proxy": true,
+            "validate_certs": true
+        }
+    },
+    "mode": "0755",
+    "msg": "file already exists",
+    "owner": "root",
+    "size": 16168192,
+    "state": "file",
+    "uid": 0,
+    "url": "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-Linux-x86_64"
+}
+<192.168.45.41> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.782071-11330300637148/ > /dev/null 2>&1 && sleep 0'
+ok: [jenkins-slave-1] => {
+    "changed": false,
+    "dest": "/usr/local/bin/docker-compose",
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "attributes": null,
+            "backup": null,
+            "checksum": "",
+            "client_cert": null,
+            "client_key": null,
+            "content": null,
+            "delimiter": null,
+            "dest": "/usr/local/bin/docker-compose",
+            "directory_mode": null,
+            "follow": false,
+            "force": false,
+            "force_basic_auth": false,
+            "group": null,
+            "headers": null,
+            "http_agent": "ansible-httpget",
+            "mode": 493,
+            "owner": null,
+            "path": "/usr/local/bin/docker-compose",
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "sha256sum": "",
+            "src": null,
+            "timeout": 10,
+            "tmp_dest": null,
+            "unsafe_writes": null,
+            "url": "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-Linux-x86_64",
+            "url_password": null,
+            "url_username": null,
+            "use_proxy": true,
+            "validate_certs": true
+        }
+    },
+    "mode": "0755",
+    "msg": "file already exists",
+    "owner": "root",
+    "size": 16168192,
+    "state": "file",
+    "uid": 0,
+    "url": "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-Linux-x86_64"
+}
+<192.168.45.40> EXEC /bin/sh -c 'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1567408059.806932-267626082247543/ > /dev/null 2>&1 && sleep 0'
+ok: [jenkins-mater] => {
+    "changed": false,
+    "dest": "/usr/local/bin/docker-compose",
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "attributes": null,
+            "backup": null,
+            "checksum": "",
+            "client_cert": null,
+            "client_key": null,
+            "content": null,
+            "delimiter": null,
+            "dest": "/usr/local/bin/docker-compose",
+            "directory_mode": null,
+            "follow": false,
+            "force": false,
+            "force_basic_auth": false,
+            "group": null,
+            "headers": null,
+            "http_agent": "ansible-httpget",
+            "mode": 493,
+            "owner": null,
+            "path": "/usr/local/bin/docker-compose",
+            "regexp": null,
+            "remote_src": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "sha256sum": "",
+            "src": null,
+            "timeout": 10,
+            "tmp_dest": null,
+            "unsafe_writes": null,
+            "url": "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-Linux-x86_64",
+            "url_password": null,
+            "url_username": null,
+            "use_proxy": true,
+            "validate_certs": true
+        }
+    },
+    "mode": "0755",
+    "msg": "file already exists",
+    "owner": "root",
+    "size": 16168192,
+    "state": "file",
+    "uid": 0,
+    "url": "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-Linux-x86_64"
+}
+
+TASK [docker : include_tasks] ****************************************************************************************************************************************************************************************************************
+task path: /Users/twcn/work/pjhu/ansible/jenkins/roles/docker/tasks/main.yml:29
+skipping: [jenkins-slave-2] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+skipping: [jenkins-slave-1] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+skipping: [jenkins-mater] => {
+    "changed": false,
+    "skip_reason": "Conditional result was False"
+}
+META: ran handlers
+META: ran handlers
+
+PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+jenkins-mater              : ok=15   changed=2    unreachable=0    failed=0   
+jenkins-slave-1            : ok=15   changed=1    unreachable=0    failed=0   
+jenkins-slave-2            : ok=15   changed=1    unreachable=0    failed=0   
+
