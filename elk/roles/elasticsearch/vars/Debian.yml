@@ -1,4 +1,0 @@
----
-java: "openjdk-7-jre-headless"
-default_file: "/etc/default/elasticsearch"
-es_home: "/usr/share/elasticsearch"

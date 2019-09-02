@@ -1,6 +1,0 @@
----
-- name: Copy configuration files for elasticsearch plugin
-  copy: src=kopf_external_settings.json dest=/usr/share/elasticsearch/plugins/{{ es_instance_name }}/kopf/_site/kopf_external_settings.json
-
-- name: restart elasticsearch after copy kopf configure file
-  service: name={{ es_instance_name }}_elasticsearch state=restarted enabled=yes
