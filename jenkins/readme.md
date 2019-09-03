@@ -1,5 +1,21 @@
+# vagrant to setup vm
+```
+vagrant up
+```
+
+# ansible to deploy docker (password: vagrant)
+```
+ansible-playbook -i profiles/dev/hosts ./docker-playbook.yml -k -vvvv
+```
+
 # docker clone from
 https://github.com/geerlingguy/ansible-role-docker
+https://success.docker.com/article/using-systemd-to-control-the-docker-daemon
+
+# test connect
+```
+docker -H 192.168.45.41:2375 info
+```
 
 # Docker in Docker
 

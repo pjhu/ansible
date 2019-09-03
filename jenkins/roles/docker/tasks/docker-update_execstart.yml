@@ -1,0 +1,12 @@
+---
+- name: Ensure docker daemon options used (systemd).
+  lineinfile:
+    dest: /lib/systemd/system/docker.service
+    regexp: "ExecStart=/usr/bin/dockerd -H fd://"
+    line: ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock
+  register: override_template
+
+- name: Reload systemd daemon if template is changed.
+  systemd:
+    daemon_reload: yes
+  when: override_template is changed
